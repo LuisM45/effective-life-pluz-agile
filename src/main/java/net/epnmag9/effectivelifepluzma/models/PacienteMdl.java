@@ -5,13 +5,14 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 /**
  *
  * @author Usuario
  */
-public class PacienteMdl {
+public class PacienteMdl implements Serializable{
     private String cedula;
     private String nombre;
     private String fechaNacimiento;

@@ -4,6 +4,7 @@
  */
 package net.epnmag9.effectivelifepluzma.views;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.*;
@@ -12,7 +13,7 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  *
  * @author luism
  */
-public class DatosClinicosVw {
+public class DatosClinicosVw implements Serializable{
     private DatosClinicosCtrl controller;
 
     public DatosClinicosVw() {

@@ -5,11 +5,12 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
-public class PacientesIngresadosMdl {
+public class PacientesIngresadosMdl implements Serializable{
     private List<PacienteCtrl> pacientes;
 
     public PacientesIngresadosMdl() {

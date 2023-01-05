@@ -4,6 +4,7 @@
  */
 package net.epnmag9.effectivelifepluzma.general;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
 
@@ -11,8 +12,8 @@ import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
  *
  * @author luism
  */
-public class MenuCLI {
-    private final Scanner scn = new Scanner(System.in);
+public class MenuCLI implements Serializable{
+    private static final Scanner scn = new Scanner(System.in);
     private final PacientesIngresadosVw pacientesIngresadosVw = PacientesIngresadosVw.createPacientesIngresados();
     
     final static String mainMenu = 
@@ -25,6 +26,7 @@ public class MenuCLI {
     
     public void run(){
         while (true) {
+            Main.save(this);
             System.out.println(mainMenu);
             switch (scn.nextLine()) {
                 case "0":

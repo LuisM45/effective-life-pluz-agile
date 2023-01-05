@@ -4,6 +4,7 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.controllers.*;
@@ -12,7 +13,7 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  *
  * @author luism
  */
-public class RegistroDatosClinicosMdl {
+public class RegistroDatosClinicosMdl implements Serializable{
     private List<DatosClinicosCtrl> datosClinicosHistoricos;
     private DatosClinicosCtrl datosClinicosRecientes;
 

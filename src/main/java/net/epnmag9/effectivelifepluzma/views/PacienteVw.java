@@ -5,10 +5,11 @@
  */
 package net.epnmag9.effectivelifepluzma.views;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
-public class PacienteVw {
+public class PacienteVw implements Serializable{
     private PacienteCtrl controller;
 
     public PacienteVw() {

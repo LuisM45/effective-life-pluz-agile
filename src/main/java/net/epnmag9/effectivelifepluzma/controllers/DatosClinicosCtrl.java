@@ -4,6 +4,7 @@
  */
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.models.DatosClinicosMdl;
 import net.epnmag9.effectivelifepluzma.views.DatosClinicosVw;
 
@@ -11,7 +12,7 @@ import net.epnmag9.effectivelifepluzma.views.DatosClinicosVw;
  *
  * @author luism
  */
-public class DatosClinicosCtrl {
+public class DatosClinicosCtrl implements Serializable{
     private DatosClinicosMdl modelo;
     private DatosClinicosVw vista;
 

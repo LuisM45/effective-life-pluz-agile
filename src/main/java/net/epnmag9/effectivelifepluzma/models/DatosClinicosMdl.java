@@ -4,13 +4,14 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 /**
  *
  * @author luism
  */
-public class DatosClinicosMdl {
+public class DatosClinicosMdl implements Serializable{
     private double peso;
     private double altura;
     private double presionSistolica;

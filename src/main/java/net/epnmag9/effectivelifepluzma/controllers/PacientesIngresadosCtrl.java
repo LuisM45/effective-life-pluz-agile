@@ -1,11 +1,12 @@
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.models.PacientesIngresadosMdl;
 import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
 
-public class PacientesIngresadosCtrl {
+public class PacientesIngresadosCtrl implements Serializable{
     private PacientesIngresadosVw view;
     private PacientesIngresadosMdl model;
 

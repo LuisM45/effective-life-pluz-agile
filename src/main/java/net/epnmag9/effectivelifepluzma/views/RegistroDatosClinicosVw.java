@@ -4,13 +4,14 @@
  */
 package net.epnmag9.effectivelifepluzma.views;
 
+import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 /**
  *
  * @author luism
  */
-public class RegistroDatosClinicosVw {
+public class RegistroDatosClinicosVw implements Serializable{
     private RegistroDatosClinicosCtrl controller;
 
     public RegistroDatosClinicosVw() {

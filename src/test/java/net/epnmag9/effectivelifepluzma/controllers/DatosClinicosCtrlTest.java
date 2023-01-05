@@ -4,6 +4,7 @@
  */
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.io.Serializable;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,7 +16,7 @@ import static org.junit.Assert.*;
  *
  * @author luism
  */
-public class DatosClinicosCtrlTest {
+public class DatosClinicosCtrlTest{
     
     @Test
     public void when_datosClinicos_do_create_check_equals() {
