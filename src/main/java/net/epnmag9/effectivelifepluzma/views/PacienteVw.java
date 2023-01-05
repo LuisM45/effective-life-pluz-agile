@@ -9,13 +9,13 @@ import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 public class PacienteVw {
-    private PacienteCtrl controlador;
+    private PacienteCtrl controller;
 
     public PacienteVw() {
     }
 
-    public PacienteVw(PacienteCtrl controlador) {
-        this.controlador = controlador;
+    public PacienteVw(PacienteCtrl controller) {
+        this.controller = controller;
     }
     
     
@@ -27,19 +27,19 @@ public class PacienteVw {
                          Sexo: %s
                          """;
         System.out.println(String.format(formato,
-                controlador.getNombre(),
-                controlador.getFechaNacimiento(),
-                controlador.getTipoSangre(),
-                controlador.getSexo()));
+                controller.getNombre(),
+                controller.getFechaNacimiento(),
+                controller.getTipoSangre(),
+                controller.getSexo()));
         System.out.println("--------------------------------------------------------------------------------");
     }
 
-    public PacienteCtrl getControlador() {
-        return controlador;
+    public PacienteCtrl getController() {
+        return controller;
     }
 
-    public void setControlador(PacienteCtrl controlador) {
-        this.controlador = controlador;
+    public void setController(PacienteCtrl controller) {
+        this.controller = controller;
     }
     
     public static PacienteCtrl crearPaciente(){
@@ -57,7 +57,7 @@ public class PacienteVw {
 
         PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
         PacienteVw pacienteVw = new PacienteVw(pacienteCtrl);
-        pacienteCtrl.setPacienteVw(pacienteVw);
+        pacienteCtrl.setView(pacienteVw);
         
         return pacienteCtrl;
     }

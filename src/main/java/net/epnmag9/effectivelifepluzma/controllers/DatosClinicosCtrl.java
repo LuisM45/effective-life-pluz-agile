@@ -4,10 +4,28 @@
  */
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import net.epnmag9.effectivelifepluzma.models.DatosClinicosMdl;
+import net.epnmag9.effectivelifepluzma.views.DatosClinicosVw;
+
 /**
  *
  * @author luism
  */
 public class DatosClinicosCtrl {
+    private DatosClinicosMdl modelo;
+    private DatosClinicosVw vista;
+
+    public DatosClinicosCtrl(double peso, double altura, double presionSistolica, double presionDiastolica, double temperatura, String fechaIngreso, String observaciones) {
+        modelo = new DatosClinicosMdl(peso, altura,presionSistolica, presionDiastolica, temperatura, fechaIngreso, observaciones);
+    }
+
+    public DatosClinicosVw getVista() {
+        return vista;
+    }
+
+    public void setVista(DatosClinicosVw vista) {
+        this.vista = vista;
+    }
+    
     
 }

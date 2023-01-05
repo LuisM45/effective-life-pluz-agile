@@ -13,40 +13,40 @@ import net.epnmag9.effectivelifepluzma.views.PacienteVw;
  * @author Usuario
  */
 public class PacienteCtrl {
-    private PacienteMdl pacienteMdl;
-    private PacienteVw pacienteVw;
+    private PacienteMdl model;
+    private PacienteVw view;
     
     public PacienteCtrl(String cedula, String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
-        pacienteMdl = new PacienteMdl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
+        model = new PacienteMdl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
     }
 
     public PacienteVw getPacienteVw() {
-        return pacienteVw;
+        return view;
     }
 
-    public void setPacienteVw(PacienteVw pacienteVw) {
-        this.pacienteVw = pacienteVw;
+    public void setView(PacienteVw view) {
+        this.view = view;
     }
     
     
     
     public String getCedula() {
-        return pacienteMdl.getCedula();
+        return model.getCedula();
     }
     
     public String getNombre() {
-        return pacienteMdl.getNombre();
+        return model.getNombre();
     }
 
     public String getFechaNacimiento() {
-        return pacienteMdl.getFechaNacimiento();
+        return model.getFechaNacimiento();
     }
 
     public String getTipoSangre() {
-        return pacienteMdl.getTipoSangre();
+        return model.getTipoSangre();
     }
 
     public String getSexo() {
-        return pacienteMdl.getSexo();
+        return model.getSexo();
     }
 }
