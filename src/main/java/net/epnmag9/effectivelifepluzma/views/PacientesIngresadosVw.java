@@ -80,7 +80,7 @@ public class PacientesIngresadosVw implements Serializable{
             System.err.println("No existe tal paciente.");
             return;
         }
-        pacienteCtrl.getRegistroDatosClinicos().getView().printDatosClinicos();
+        pacienteCtrl.getRegistroDatosClinicos().getDatosClinicosRecientes().getVista().printDatosClinicos();
         
     }
 }
