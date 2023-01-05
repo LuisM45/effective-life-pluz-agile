@@ -24,8 +24,8 @@ public class DiagnosticoCtrlTest {
         String doctor = "Julio";
         String fechaDiagnostico = "01/01/2023";
         DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl(doctor, diagnostico, fechaDiagnostico);
-        assertEquals(doctor, diagnosticoCtrl.getDiagnostico());
         assertEquals(doctor, diagnosticoCtrl.getDoctor());
+        assertEquals(diagnostico, diagnosticoCtrl.getDiagnostico());
         assertEquals(fechaDiagnostico, diagnosticoCtrl.getFechaDiagnostico());
     }
             
