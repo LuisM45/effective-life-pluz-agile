@@ -12,5 +12,32 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  * @author Usuario
  */
 public class PacienteMdl {
+    String nombre;
+    String fechaNacimiento;
+    String tipoSangre;
+    String sexo;
+
+    public PacienteMdl(String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.tipoSangre = tipoSangre;
+        this.sexo = sexo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
     
 }
