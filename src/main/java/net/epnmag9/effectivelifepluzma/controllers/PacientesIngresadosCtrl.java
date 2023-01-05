@@ -9,7 +9,6 @@ public class PacientesIngresadosCtrl {
     private PacientesIngresadosMdl model;
 
     public PacientesIngresadosCtrl() {
-        this.view = new PacientesIngresadosVw();
         this.model = new PacientesIngresadosMdl();
     }
 

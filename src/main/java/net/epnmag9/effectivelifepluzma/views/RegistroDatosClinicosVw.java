@@ -11,5 +11,22 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  * @author luism
  */
 public class RegistroDatosClinicosVw {
+    private RegistroDatosClinicosCtrl controller;
+
+    public RegistroDatosClinicosVw() {
+    }
+
+    public RegistroDatosClinicosVw(RegistroDatosClinicosCtrl controller) {
+        this.controller = controller;
+    }
+
+    public RegistroDatosClinicosCtrl getController() {
+        return controller;
+    }
+
+    public void setController(RegistroDatosClinicosCtrl controller) {
+        this.controller = controller;
+    }
+    
     
 }
