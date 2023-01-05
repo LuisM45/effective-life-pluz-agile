@@ -20,7 +20,7 @@ public class RegistroDiagnosticoCtrl implements Serializable {
 
     public RegistroDiagnosticoCtrl() {
         model = new RegistroDiagnosticoMdl();
-        view = new RegistroDiagnosticoVw();
+        view = new RegistroDiagnosticoVw(this);
     }
 
     public RegistroDiagnosticoVw getView() {
@@ -32,9 +32,17 @@ public class RegistroDiagnosticoCtrl implements Serializable {
     }
 
     public void pushDiagnostico(DiagnosticoCtrl diagnosticoCtrl) {
-
+        DiagnosticoCtrl diagnosticoReciente = model.getDiagnosticoReciente();
+        if(diagnosticoReciente != null)
+            model.getDiagnosticosHistoricos().add(diagnosticoReciente);
+        
+        model.setDiagnosticoReciente(diagnosticoCtrl);
     }
 
+    public List<DiagnosticoCtrl> getDiagnosticosHistoricos(){
+        return model.getDiagnosticosHistoricos();
+    }
+    
     public DiagnosticoCtrl getDiagnosticoRecientes(){
         return model.getDiagnosticoReciente();
     }

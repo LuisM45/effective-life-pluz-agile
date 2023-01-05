@@ -17,7 +17,19 @@ public class RegistroDiagnosticoMdl implements Serializable{
     private List<DiagnosticoCtrl> diagnosticosHistoricos;
     private DiagnosticoCtrl diagnosticoReciente;
     
+    public RegistroDiagnosticoMdl(){
+        diagnosticosHistoricos = new ArrayList<>();
+    }
+    
+    public List<DiagnosticoCtrl> getDiagnosticosHistoricos(){
+        return diagnosticosHistoricos;
+    }
+    
     public DiagnosticoCtrl getDiagnosticoReciente(){
         return diagnosticoReciente;
+    }
+    
+    public void setDiagnosticoReciente(DiagnosticoCtrl diagnositcoReciente){
+        this.diagnosticoReciente = diagnositcoReciente;
     }
 }

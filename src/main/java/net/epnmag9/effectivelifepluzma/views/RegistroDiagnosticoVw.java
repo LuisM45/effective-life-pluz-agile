@@ -4,10 +4,20 @@
  */
 package net.epnmag9.effectivelifepluzma.views;
 
+import java.io.Serializable;
+import net.epnmag9.effectivelifepluzma.controllers.*;
 /**
  *
  * @author Thomas Tapia
  */
-public class RegistroDiagnosticoVw {
+public class RegistroDiagnosticoVw implements Serializable{
+    private RegistroDiagnosticoCtrl controller;
+
+    public RegistroDiagnosticoVw(){
+    }
+    
+    public RegistroDiagnosticoVw(RegistroDiagnosticoCtrl controller){
+        this.controller = controller;
+    }
     
 }
