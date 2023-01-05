@@ -47,7 +47,6 @@ public class DiagnosticoVw implements Serializable {
         
         System.out.print("Se ha registrado los datos correctamente.");
 
-        
         return diagnosticoCtrl;
     }
 }
