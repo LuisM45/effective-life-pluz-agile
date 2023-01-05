@@ -27,5 +27,31 @@ public class DatosClinicosCtrl {
         this.vista = vista;
     }
     
-    
+    public double getPeso() {
+        return modelo.getPeso();
+    }
+
+    public double getAltura() {
+        return modelo.getAltura();
+    }
+
+    public double getPresionSistolica() {
+        return modelo.getPresionSistolica();
+    }
+
+    public double getPresionDiastolica() {
+        return modelo.getPresionDiastolica();
+    }
+
+    public double getTemperatura() {
+        return modelo.getTemperatura();
+    }
+
+    public String getFechaIngreso() {
+        return modelo.getFechaIngreso();
+    }
+
+    public String getObservaciones() {
+        return modelo.getObservaciones();
+    }
 }
