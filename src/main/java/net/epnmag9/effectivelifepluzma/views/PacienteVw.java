@@ -59,6 +59,9 @@ public class PacienteVw {
         PacienteVw pacienteVw = new PacienteVw(pacienteCtrl);
         pacienteCtrl.setView(pacienteVw);
         
+        System.out.print("Se ha ingresado el paciente correctamente.");
+
+        
         return pacienteCtrl;
     }
 }

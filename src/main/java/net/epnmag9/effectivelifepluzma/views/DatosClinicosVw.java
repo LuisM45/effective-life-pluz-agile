@@ -51,6 +51,9 @@ public class DatosClinicosVw {
         DatosClinicosVw datosClinicosVw = new DatosClinicosVw(datosClinicosCtrl);
         datosClinicosCtrl.setVista(datosClinicosVw);
         
+        System.out.print("Se ha registrado los datos correctamente.");
+
+        
         return datosClinicosCtrl;
     }
 }

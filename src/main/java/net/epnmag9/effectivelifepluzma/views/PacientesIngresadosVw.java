@@ -39,5 +39,7 @@ public class PacientesIngresadosVw {
     public void registrarPaciente(){
         PacienteCtrl pacienteCtrl = PacienteVw.crearPaciente();
         controller.addPaciente(pacienteCtrl);
+        System.out.print("Se ha registrado el paciente al sistema correctamente.");
+
     }
 }
