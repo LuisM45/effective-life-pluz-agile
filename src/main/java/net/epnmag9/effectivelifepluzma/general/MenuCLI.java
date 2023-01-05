@@ -18,6 +18,8 @@ public class MenuCLI {
     final static String mainMenu = 
               """
               1. Ingresar Paciente
+              2. Agregar Datos Clinicos
+              3. Actualizar Datos Clinicos
               0. Salir
               Ingrese la acción a realizar: """;
     
@@ -30,6 +32,12 @@ public class MenuCLI {
                     break;
                 case "1":
                     pacientesIngresadosVw.registrarPaciente();
+                    break;
+                case "2":
+                    pacientesIngresadosVw.addDatosClinicos();
+                    break;
+                case "3":
+                    pacientesIngresadosVw.updateDatosClinicos();
                     break;
                 default:;
             }

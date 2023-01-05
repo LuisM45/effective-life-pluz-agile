@@ -47,6 +47,10 @@ public class PacienteMdl {
     public String getCedula() {
         return cedula;
     }
+
+    public RegistroDatosClinicosCtrl getRegistroDatosClinicos() {
+        return registroDatosClinicos;
+    }
     
     
 }

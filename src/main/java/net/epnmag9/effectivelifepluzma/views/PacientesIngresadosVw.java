@@ -5,6 +5,7 @@
  */
 package net.epnmag9.effectivelifepluzma.views;
 
+import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 /**
@@ -39,7 +40,33 @@ public class PacientesIngresadosVw {
     public void registrarPaciente(){
         PacienteCtrl pacienteCtrl = PacienteVw.crearPaciente();
         controller.addPaciente(pacienteCtrl);
-        System.out.print("Se ha registrado el paciente al sistema correctamente.");
+        System.out.println("Se ha registrado el paciente al sistema correctamente.");
 
+    }
+    
+    public void addDatosClinicos(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if(pacienteCtrl == null){
+            System.out.println("No existe tal paciente");
+            return;
+        }
+        pacienteCtrl.getRegistroDatosClinicos().getView().addDatosClinicos();
+        System.out.println("Datos añadidos exitosamente: ");
+    }
+    
+    public void updateDatosClinicos(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if(pacienteCtrl == null){
+            System.out.println("No existe tal paciente");
+            return;
+        }
+        pacienteCtrl.getRegistroDatosClinicos().getView().updateDatosClinicos();
+        System.out.println("Datos actualizados exitosamente.");
     }
 }

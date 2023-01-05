@@ -28,8 +28,6 @@ public class PacienteCtrl {
         this.view = view;
     }
     
-    
-    
     public String getCedula() {
         return model.getCedula();
     }
@@ -48,5 +46,9 @@ public class PacienteCtrl {
 
     public String getSexo() {
         return model.getSexo();
+    }
+    
+    public RegistroDatosClinicosCtrl getRegistroDatosClinicos() {
+        return model.getRegistroDatosClinicos();
     }
 }

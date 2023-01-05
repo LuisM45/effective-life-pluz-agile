@@ -28,5 +28,10 @@ public class RegistroDatosClinicosVw {
         this.controller = controller;
     }
     
-    
+    public void addDatosClinicos(){
+        controller.pushDatosClinicos(DatosClinicosVw.createDatosClinicos());
+    }
+    public void updateDatosClinicos(){
+        controller.updateDatosClinicos(DatosClinicosVw.createDatosClinicos());
+    }
 }

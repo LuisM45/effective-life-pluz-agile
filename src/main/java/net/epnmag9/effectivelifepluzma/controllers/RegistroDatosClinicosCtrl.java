@@ -18,6 +18,7 @@ public class RegistroDatosClinicosCtrl {
 
     public RegistroDatosClinicosCtrl() {
         model = new RegistroDatosClinicosMdl();
+        view = new RegistroDatosClinicosVw(this);
     }
 
     public RegistroDatosClinicosVw getView() {

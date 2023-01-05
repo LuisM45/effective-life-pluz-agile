@@ -1,5 +1,6 @@
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.util.Collections;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.models.PacientesIngresadosMdl;
 import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
@@ -33,5 +34,12 @@ public class PacientesIngresadosCtrl {
     
     public List<PacienteCtrl> getPacientes() {
         return model.getPacientes();
+    }
+    
+    public PacienteCtrl searchPacienteByCedula(String cedula) {
+        for(PacienteCtrl p: model.getPacientes()){
+            if(cedula.equals(p.getCedula())) return p;
+        }
+        return null;
     }
 }
