@@ -1,5 +1,6 @@
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.util.List;
 import net.epnmag9.effectivelifepluzma.models.PacientesIngresadosMdl;
 import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
 
@@ -20,4 +21,7 @@ public class PacientesIngresadosCtrl {
     public void addPaciente(PacienteCtrl pacienteCtrl){
     }
     
+    public List<PacientesIngresadosCtrl> getPacientes() {
+        return model.getPacientes();
+    }
 }
