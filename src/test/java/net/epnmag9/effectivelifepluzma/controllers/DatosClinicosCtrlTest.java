@@ -17,29 +17,24 @@ import static org.junit.Assert.*;
  */
 public class DatosClinicosCtrlTest {
     
-    public DatosClinicosCtrlTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void when_datosClinicos_do_create_check_equals() {
+        double peso = 56;
+        double altura = 1.4;
+        double presionSistolica = 67;
+        double presionDiastolica = 76;
+        double temperatura = 38.5;
+        String fechaIngreso = "01/04/2020";
+        String observaciones = "N/A";
+        
+        DatosClinicosCtrl datosClinicosCtrl = new DatosClinicosCtrl(peso, altura, presionSistolica, presionDiastolica, temperatura, fechaIngreso, observaciones);        
+        assertEquals(peso, datosClinicosCtrl.getPeso(),0);
+        assertEquals(altura, datosClinicosCtrl.getAltura(),0);
+        assertEquals(presionSistolica, datosClinicosCtrl.getPresionSistolica(),0);
+        assertEquals(presionDiastolica, datosClinicosCtrl.getPresionDiastolica(),0);
+        assertEquals(temperatura, datosClinicosCtrl.getTemperatura(),0);
+        assertEquals(fechaIngreso, datosClinicosCtrl.getFechaIngreso());
+        assertEquals(observaciones, datosClinicosCtrl.getObservaciones());
     }
     
 }
