@@ -35,4 +35,11 @@ public class RegistroDatosClinicosVw implements Serializable{
     public void updateDatosClinicos(){
         controller.updateDatosClinicos(DatosClinicosVw.createDatosClinicos());
     }
+    
+    public void printDatosClinicos(){
+        for(DatosClinicosCtrl datos: controller.getDatosClinicosHistoricos()){
+            datos.getVista().printDatosClinicos();
+        }
+        
+    }
 }

@@ -32,4 +32,5 @@ public class RegistroDatosClinicosMdl implements Serializable{
     public void setDatosClinicosRecientes(DatosClinicosCtrl datosClinicosRecientes) {
         this.datosClinicosRecientes = datosClinicosRecientes;
     }
+
 }

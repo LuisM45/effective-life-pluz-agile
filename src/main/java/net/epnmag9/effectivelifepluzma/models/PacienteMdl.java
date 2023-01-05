@@ -52,6 +52,5 @@ public class PacienteMdl implements Serializable{
     public RegistroDatosClinicosCtrl getRegistroDatosClinicos() {
         return registroDatosClinicos;
     }
-    
-    
+
 }
