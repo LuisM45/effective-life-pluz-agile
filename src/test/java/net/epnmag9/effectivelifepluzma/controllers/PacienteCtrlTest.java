@@ -11,13 +11,15 @@ public class PacienteCtrlTest {
 
     @Test
     public void when_pacienteData_do_register_check_ok() {
+        String cedula = "123456787";
         String nombre = "Ruth Benavides";
         String fechaNacimiento = "02/03/1975";
         String tipoSangre = "A+";
         String sexo = "F";
         
-        PacienteCtrl pacienteCtrl = new PacienteCtrl(nombre,fechaNacimiento,tipoSangre,sexo);
+        PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula,nombre,fechaNacimiento,tipoSangre,sexo);
         
+        assertEquals(pacienteCtrl.getCedula(), cedula);
         assertEquals(pacienteCtrl.getNombre(), nombre);
         assertEquals(pacienteCtrl.getFechaNacimiento(), fechaNacimiento);
         assertEquals(pacienteCtrl.getTipoSangre(), tipoSangre);

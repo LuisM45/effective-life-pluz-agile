@@ -12,16 +12,20 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  * @author Usuario
  */
 public class PacienteMdl {
+    private String cedula;
     private String nombre;
     private String fechaNacimiento;
     private String tipoSangre;
     private String sexo;
+    private RegistroDatosClinicosCtrl registroDatosClinicos;
 
-    public PacienteMdl(String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
+    public PacienteMdl(String cedula, String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
+        this.cedula = cedula;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.tipoSangre = tipoSangre;
         this.sexo = sexo;
+        this.registroDatosClinicos = new RegistroDatosClinicosCtrl();
     }
 
     public String getNombre() {
@@ -39,5 +43,10 @@ public class PacienteMdl {
     public String getSexo() {
         return sexo;
     }
+
+    public String getCedula() {
+        return cedula;
+    }
+    
     
 }

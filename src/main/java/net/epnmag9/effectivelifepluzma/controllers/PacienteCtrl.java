@@ -16,8 +16,22 @@ public class PacienteCtrl {
     private PacienteMdl pacienteMdl;
     private PacienteVw pacienteVw;
     
-    public PacienteCtrl(String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
-        pacienteMdl = new PacienteMdl(nombre, fechaNacimiento, tipoSangre, sexo);
+    public PacienteCtrl(String cedula, String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
+        pacienteMdl = new PacienteMdl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
+    }
+
+    public PacienteVw getPacienteVw() {
+        return pacienteVw;
+    }
+
+    public void setPacienteVw(PacienteVw pacienteVw) {
+        this.pacienteVw = pacienteVw;
+    }
+    
+    
+    
+    public String getCedula() {
+        return pacienteMdl.getCedula();
     }
     
     public String getNombre() {

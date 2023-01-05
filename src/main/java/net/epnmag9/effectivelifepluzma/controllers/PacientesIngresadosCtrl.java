@@ -12,6 +12,16 @@ public class PacientesIngresadosCtrl {
         this.view = new PacientesIngresadosVw();
         this.model = new PacientesIngresadosMdl();
     }
+
+    public PacientesIngresadosVw getView() {
+        return view;
+    }
+
+    public void setView(PacientesIngresadosVw view) {
+        this.view = view;
+    }
+    
+    
     
     public PacientesIngresadosCtrl(PacientesIngresadosVw view, PacientesIngresadosMdl model) {
         this.view = view;

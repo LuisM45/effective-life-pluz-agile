@@ -22,12 +22,13 @@ public class PacientesIngresadosCtrlTest {
 
     @Test
     public void when_paciente_do_add_check_insertion() {
+        String cedula = "123456787";
         String nombre = "Ruth Benavides";
         String fechaNacimiento = "02/03/1975";
         String tipoSangre = "A+";
         String sexo = "F";
         
-        PacienteCtrl pacienteCtrl = new PacienteCtrl(nombre,fechaNacimiento,tipoSangre,sexo);
+        PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula,nombre,fechaNacimiento,tipoSangre,sexo);
         PacientesIngresadosCtrl pic = new PacientesIngresadosCtrl();
         pic.addPaciente(pacienteCtrl);
         

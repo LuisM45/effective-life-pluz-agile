@@ -12,5 +12,32 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  * @author Usuario
  */
 public class PacientesIngresadosVw {
+    private PacientesIngresadosCtrl controlador;
+
+    public PacientesIngresadosVw(PacientesIngresadosCtrl controlador) {
+        this.controlador = controlador;
+    }
+
+    public PacientesIngresadosVw() {
+    }
+
+    public PacientesIngresadosCtrl getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(PacientesIngresadosCtrl controlador) {
+        this.controlador = controlador;
+    }
+
+    public static PacientesIngresadosVw createPacientesIngresados(){
+        PacientesIngresadosCtrl pacientesIngresadosCtrl = new PacientesIngresadosCtrl();
+        PacientesIngresadosVw pacientesIngresadosVw = new PacientesIngresadosVw(pacientesIngresadosCtrl);
+        pacientesIngresadosCtrl.setView(pacientesIngresadosVw);
+        return  pacientesIngresadosVw;
+    }
     
+    public void registrarPaciente(){
+        PacienteCtrl pacienteCtrl = PacienteVw.crearPaciente();
+        controlador.addPaciente(pacienteCtrl);
+    }
 }
