@@ -19,9 +19,10 @@ public class PacientesIngresadosCtrl {
     }
     
     public void addPaciente(PacienteCtrl pacienteCtrl){
+        model.getPacientes().add(pacienteCtrl);
     }
     
-    public List<PacientesIngresadosCtrl> getPacientes() {
+    public List<PacienteCtrl> getPacientes() {
         return model.getPacientes();
     }
 }

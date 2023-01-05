@@ -9,9 +9,9 @@ import java.util.List;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
 public class PacientesIngresadosMdl {
-    private List<PacientesIngresadosCtrl> pacientes;
+    private List<PacienteCtrl> pacientes;
 
-    public List<PacientesIngresadosCtrl> getPacientes() {
+    public List<PacienteCtrl> getPacientes() {
         return pacientes;
     }
 }
