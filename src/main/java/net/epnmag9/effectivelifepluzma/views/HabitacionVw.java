@@ -19,14 +19,20 @@ public class HabitacionVw {
     private PacientesIngresadosVw pacientesView;
 
     public HabitacionVw(PacientesIngresadosVw pacientesView) {
+        this.pacientesView = pacientesView;
     }
 
-    public HabitacionVw(HabitacionCtrl controller) {
+    public HabitacionVw(HabitacionCtrl controller, PacientesIngresadosVw pacientesView) {
         this.controller = controller;
+        this.pacientesView = pacientesView;
     }
 
-    public HabitacionCtrl getController() {
-        return controller;
+    public PacientesIngresadosVw getPacientesView() {
+        return pacientesView;
+    }
+
+    public void setPacientesView(PacientesIngresadosVw pacientesView) {
+        this.pacientesView = pacientesView;
     }
 
     public void setController(HabitacionCtrl controller) {
@@ -62,5 +68,12 @@ public class HabitacionVw {
         else{
             System.out.println(String.format("El paciente %s fue dado de alta",p.getNombre()));
         }
+    }
+    
+    public static HabitacionCtrl createHabitacion(String codigo,HospitalVw hospitalVw){
+        HabitacionCtrl habitacionCtrl = new HabitacionCtrl(codigo);
+        habitacionCtrl.setView(new HabitacionVw(habitacionCtrl,hospitalVw.getPacientesIngresadosVw()));
+        return habitacionCtrl;
+        
     }
 }

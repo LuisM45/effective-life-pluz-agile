@@ -28,7 +28,9 @@ public class HabitacionCtrl {
         this.view = view;
     }
     
-    
+    public String getCodigo(){
+        return this.model.getCodigo();
+    }
     
     public boolean putPaciente(PacienteCtrl pacienteCtrl){
         if(model.getPaciente()!=null) return false;
@@ -44,6 +46,10 @@ public class HabitacionCtrl {
     
     public PacienteCtrl peekPaciente(){
         return model.getPaciente();
+    }
+    
+    public boolean isEmpty(){
+        return model.getPaciente()==null;
     }
     
 }
