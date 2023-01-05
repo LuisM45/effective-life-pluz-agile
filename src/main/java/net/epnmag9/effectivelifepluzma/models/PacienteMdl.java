@@ -28,6 +28,7 @@ public class PacienteMdl implements Serializable{
         this.tipoSangre = tipoSangre;
         this.sexo = sexo;
         this.registroDatosClinicos = new RegistroDatosClinicosCtrl();
+        this.registroDiagnostico = new RegistroDiagnosticoCtrl();
     }
 
     public String getNombre() {
