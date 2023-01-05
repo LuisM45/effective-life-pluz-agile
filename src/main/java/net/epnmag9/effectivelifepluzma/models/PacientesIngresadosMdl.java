@@ -10,4 +10,8 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
 
 public class PacientesIngresadosMdl {
     private List<PacientesIngresadosCtrl> pacientes;
+
+    public List<PacientesIngresadosCtrl> getPacientes() {
+        return pacientes;
+    }
 }
