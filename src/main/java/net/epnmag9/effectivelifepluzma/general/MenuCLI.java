@@ -22,6 +22,7 @@ public class MenuCLI implements Serializable{
               2. Agregar Datos Clinicos
               3. Actualizar Datos Clinicos
               4. Visualizar Historial Clinico
+              5. Agregar Diagnostico
               0. Salir
               Ingrese la acción a realizar: """;
     
@@ -45,6 +46,8 @@ public class MenuCLI implements Serializable{
                 case "4":
                     pacientesIngresadosVw.showHistorialClinico();
                     break;
+                case "5":
+                    pacientesIngresadosVw.addDiagnostico();
                 default:;
             }
         }

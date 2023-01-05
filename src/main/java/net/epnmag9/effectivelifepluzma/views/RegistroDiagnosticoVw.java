@@ -20,4 +20,17 @@ public class RegistroDiagnosticoVw implements Serializable{
         this.controller = controller;
     }
     
+    public RegistroDiagnosticoCtrl getController(){
+        return controller;
+    }
+    
+   public void setController(RegistroDiagnosticoCtrl controller){
+       this.controller = controller;
+   }
+   
+   public void addDiagnostico(){
+       controller.pushDiagnostico(DiagnosticoVw.createDiagnostico());
+   }
+    
+   
 }

@@ -26,4 +26,16 @@ public class RegistroDiagnosticoCtrlTest {
         assertEquals(diagnosticoCtrl, regDiagnosticoCtrl.getDiagnosticoRecientes());
     }
     
+    @Test
+    public void when_variousDiagnostico_do_register_check_historic() {
+        RegistroDiagnosticoCtrl regDiagnosticosCtrl = new RegistroDiagnosticoCtrl();
+        DiagnosticoCtrl diagnosticoCtrl1 = new DiagnosticoCtrl("Jorge","Amigdatilis","01/12/2022");
+        DiagnosticoCtrl diagnosticoCtrl2 = new DiagnosticoCtrl("Jorge","Presion Alta","01/12/2023");
+        
+        regDiagnosticosCtrl.pushDiagnostico(diagnosticoCtrl1);
+        regDiagnosticosCtrl.pushDiagnostico(diagnosticoCtrl2);
+        assertEquals(diagnosticoCtrl2,regDiagnosticosCtrl.getDiagnosticoRecientes());
+        assertEquals(diagnosticoCtrl1,regDiagnosticosCtrl.getDiagnosticosHistoricos().get(0));
+    }
+    
 }
