@@ -35,11 +35,13 @@ public class DiagnosticoVw implements Serializable {
         String formato = """
                          Doctor: %s
                          Diagnostico: %s
+                         Prescripion: %s
                          Fecha Diagnostico: %s
                          """;
         System.out.println(String.format(formato,
                 controller.getDoctor(),
                 controller.getDiagnostico(),
+                controller.getPrescripcion(),
                 controller.getFechaDiagnostico()));
         System.out.println("--------------------------------------------------------------------------------");
     }
@@ -50,10 +52,12 @@ public class DiagnosticoVw implements Serializable {
         String doctor = scn.nextLine();
         System.out.print("Ingrese el diagnostico: ");
         String diagnostico = scn.nextLine();
+        System.out.print("Ingrese la prescripcion:");
+        String prescripcion = scn.nextLine();
         System.out.print("Ingrese la fecha del diagnostico: ");
         String fechaDiagnostico = scn.nextLine();
         
-        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl(doctor, diagnostico, fechaDiagnostico);
+        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl(doctor, diagnostico,prescripcion, fechaDiagnostico);
         DiagnosticoVw diagnosticoVw = new DiagnosticoVw(diagnosticoCtrl);
         diagnosticoCtrl.setVista(diagnosticoVw);
         

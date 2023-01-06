@@ -17,8 +17,8 @@ public class DiagnosticoCtrl implements Serializable{
     DiagnosticoMdl modelo;
     DiagnosticoVw vista;
 
-    public DiagnosticoCtrl(String doctor, String diagnostico, String fechaDiagnostico) {
-        modelo = new DiagnosticoMdl(doctor, diagnostico, fechaDiagnostico);
+    public DiagnosticoCtrl(String doctor, String diagnostico,String prescripcion,  String fechaDiagnostico) {
+        modelo = new DiagnosticoMdl(doctor, diagnostico, prescripcion ,fechaDiagnostico);
     }
     
     public DiagnosticoVw getView(){
@@ -35,6 +35,10 @@ public class DiagnosticoCtrl implements Serializable{
     
     public String getDoctor(){
         return modelo.getDoctor();
+    }
+    
+    public String getPrescripcion(){
+        return modelo.getPrescripcion();
     }
     
     public String getFechaDiagnostico(){

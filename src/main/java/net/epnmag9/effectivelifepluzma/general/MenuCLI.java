@@ -49,8 +49,10 @@ public class MenuCLI implements Serializable{
                     break;
                 case "5":
                     pacientesIngresadosVw.addDiagnostico();
+                    break;
                 case "6":
                     pacientesIngresadosVw.showDiagnostico();
+                    break;
                 default:;
             }
         }
