@@ -5,6 +5,7 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
@@ -13,7 +14,7 @@ import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
  *
  * @author Usuario
  */
-public class HospitalMdl {
+public class HospitalMdl implements Serializable{
     private List<HabitacionCtrl> habitaciones;
 
     public HospitalMdl() {

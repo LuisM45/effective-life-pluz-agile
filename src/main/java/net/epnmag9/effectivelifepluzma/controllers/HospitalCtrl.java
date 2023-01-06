@@ -5,6 +5,7 @@
  */
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.models.HospitalMdl;
@@ -14,7 +15,7 @@ import net.epnmag9.effectivelifepluzma.views.HospitalVw;
  *
  * @author Usuario
  */
-public class HospitalCtrl {
+public class HospitalCtrl implements Serializable{
     private HospitalMdl model;
     private HospitalVw view;
 
@@ -34,7 +35,7 @@ public class HospitalCtrl {
         model.getHabitaciones().add(habitacionCtrl);
     }
     
-    public List<HabitacionCtrl> checkFreeHabitacion(HabitacionCtrl habitacionCtrl){
+    public List<HabitacionCtrl> checkFreeHabitacion(){
         List<HabitacionCtrl> freeHabitacion = new LinkedList<>();
         for(HabitacionCtrl h: model.getHabitaciones()){
             if(h.peekPaciente()==null){
@@ -47,18 +48,13 @@ public class HospitalCtrl {
     public boolean putPacienteInHabitacion(String codigo, PacienteCtrl pacienteCtrl){
         for(HabitacionCtrl habitacionCtrl: model.getHabitaciones()){
             if(habitacionCtrl.getCodigo().equals(codigo)){
-                if(habitacionCtrl.putPaciente(pacienteCtrl))
-                    return true;
-                return false;
+                return habitacionCtrl.putPaciente(pacienteCtrl);
             }
         }
-        
-        HabitacionCtrl habitacionCtrl = new HabitacionCtrl(codigo);
-        model.getHabitaciones().add(habitacionCtrl);
-        return true;
+        return false;
     }
     
-        public boolean popPacienteOutHabitacion(PacienteCtrl pacienteCtrl){
+    public boolean popPacienteOutHabitacion(PacienteCtrl pacienteCtrl){
         for(HabitacionCtrl h: model.getHabitaciones()){
             if(h.peekPaciente()==pacienteCtrl){
                 h.popPaciente();
@@ -66,5 +62,13 @@ public class HospitalCtrl {
             }
         }
         return false;
+    }
+    
+    public HabitacionCtrl getHabitacion(String codigo){
+        for(HabitacionCtrl hc: model.getHabitaciones()){
+            if(hc.getCodigo().equals(codigo))
+                return hc;
+        }
+        return null;
     }
 }
