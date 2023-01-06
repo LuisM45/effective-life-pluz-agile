@@ -60,4 +60,32 @@ public class HospitalCtrlTest {
         assertEquals(null, hospitalCtrl.getHabitacion(codigo).peekPaciente());
         
     }
+    
+    @Test
+    public void when_visita_do_add_check_added() {
+        String codigo = "E";
+        String nombre = "John Doe";
+        HospitalCtrl hospitalCtrl = new HospitalCtrl();
+        HabitacionCtrl habitacionCtrl = new HabitacionCtrl(codigo);
+        hospitalCtrl.addHabitacion(habitacionCtrl);
+        VisitaCtrl visitaCtrl = new VisitaCtrl(nombre, habitacionCtrl);
+        
+        hospitalCtrl.getVisitas().add(visitaCtrl);
+        assertEquals(visitaCtrl, hospitalCtrl.getVisitaByNombre(nombre));
+        
+    }
+    
+    @Test
+    public void when_visita_do_remove_check_notThere() {
+        String codigo = "E";
+        String nombre = "John Doe";
+        HospitalCtrl hospitalCtrl = new HospitalCtrl();
+        HabitacionCtrl habitacionCtrl = new HabitacionCtrl(codigo);
+        hospitalCtrl.addHabitacion(habitacionCtrl);
+        VisitaCtrl visitaCtrl = new VisitaCtrl(nombre, habitacionCtrl);
+        
+        hospitalCtrl.getVisitas().add(visitaCtrl);
+        hospitalCtrl.getVisitas().remove(hospitalCtrl.getVisitaByNombre(nombre));
+        assertEquals(0, hospitalCtrl.getVisitas().size());
+    }
 }
