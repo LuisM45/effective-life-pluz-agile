@@ -6,6 +6,7 @@ package net.epnmag9.effectivelifepluzma.views;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.*;
 
@@ -46,7 +47,7 @@ public class DiagnosticoVw implements Serializable {
         System.out.println("--------------------------------------------------------------------------------");
     }
     
-     public static DiagnosticoCtrl createDiagnostico(){
+    public static DiagnosticoCtrl createDiagnostico(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Ingrese el nombre del doctor: ");
         String doctor = scn.nextLine();
@@ -64,5 +65,17 @@ public class DiagnosticoVw implements Serializable {
         System.out.print("Se ha registrado los datos correctamente.");
 
         return diagnosticoCtrl;
+    }
+    
+    public static void printSugerenciaDiagnostico(PacienteCtrl pacienteCtrl){
+        List<String> sugerencias = DiagnosticoCtrl.getSugerenciasDiagnostico(pacienteCtrl);
+        if(sugerencias.isEmpty()){
+            System.out.println("No existen sugerencias para el diagnostico");
+            return;
+        }
+        for(String s: sugerencias){
+            System.out.println(String.format("El paciente tiene %s",s.toLowerCase()));
+            return;
+        }
     }
 }

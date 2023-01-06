@@ -24,13 +24,14 @@ public class MenuCLI implements Serializable{
               2. Agregar Datos Clinicos
               3. Actualizar Datos Clinicos
               4. Visualizar Historial Clinico
-              5. Agregar Diagnostico
-              6. Visualizar Diagnostico
-              7. Ver habitaciones libres
-              8. Ingresar un paciente a una habitación
-              9. Remover un paciente de una habitación
-              10. Ingresar una visita a una habitación
-              11. Mostrar visitas
+              5. Obtener una sugerencia para el diagnostico
+              6. Agregar Diagnostico
+              7. Visualizar Diagnostico
+              8. Ver habitaciones libres
+              9. Ingresar un paciente a una habitación
+              10. Remover un paciente de una habitación
+              11. Ingresar una visita a una habitación
+              12. Mostrar visitas
               0. Salir
               Ingrese la acción a realizar: """;
     
@@ -39,43 +40,22 @@ public class MenuCLI implements Serializable{
             Main.save(this);
             System.out.println(mainMenu);
             switch (scn.nextLine()) {
-                case "0":
-                    System.exit(0);
-                    break;
-                case "1":
-                    pacientesIngresadosVw.registrarPaciente();
-                    break;
-                case "2":
-                    pacientesIngresadosVw.addDatosClinicos();
-                    break;
-                case "3":
-                    pacientesIngresadosVw.updateDatosClinicos();
-                    break;
-                case "4":
-                    pacientesIngresadosVw.showHistorialClinico();
-                    break;
-                case "5":
-                    pacientesIngresadosVw.addDiagnostico();
-                    break;
-                case "6":
-                    pacientesIngresadosVw.showDiagnostico();
-                    break;
-                case "7":
-                    hospitalVw.peekFreeHabitaciones();
-                    break;
-                case "8":
-                    hospitalVw.putPaciente();
-                    break;
-                case "9":
-                    hospitalVw.popPaciente();
-                    break;
-                case "10":
-                    hospitalVw.addVisita();
-                    break;
-                case "11":
-                    hospitalVw.printVisitas();
-                    break;
-                default:;
+                case "0" -> System.exit(0);
+                case "1" -> pacientesIngresadosVw.registrarPaciente();
+                case "2" -> pacientesIngresadosVw.addDatosClinicos();
+                case "3" -> pacientesIngresadosVw.updateDatosClinicos();
+                case "4" -> pacientesIngresadosVw.showHistorialClinico();
+                case "5" -> pacientesIngresadosVw.printSugerenciaDiagnostico();
+                case "6" -> pacientesIngresadosVw.addDiagnostico();
+                case "7" -> pacientesIngresadosVw.showDiagnostico();
+                case "8" -> hospitalVw.peekFreeHabitaciones();
+                case "9" -> hospitalVw.putPaciente();
+                case "10" -> hospitalVw.popPaciente();
+                case "11" -> hospitalVw.addVisita();
+                case "12" -> hospitalVw.printVisitas();
+                default -> {
+                    ;
+                }
             }
         }
     }
