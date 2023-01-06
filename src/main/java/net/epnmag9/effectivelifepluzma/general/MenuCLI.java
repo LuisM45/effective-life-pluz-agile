@@ -23,11 +23,14 @@ public class MenuCLI implements Serializable{
               1. Ingresar Paciente
               2. Agregar Datos Clinicos
               3. Actualizar Datos Clinicos
-              a. Ver habitaciones libres
-              b. Ingresar un paciente a una habitación
-              c. Remover un paciente de una habitación
-              d. Ingresar una visita a una habitación
-              e. Mostrar visitas
+              4. Visualizar Historial Clinico
+              5. Agregar Diagnostico
+              6. Visualizar Diagnostico
+              7. Ver habitaciones libres
+              8. Ingresar un paciente a una habitación
+              9. Remover un paciente de una habitación
+              10. Ingresar una visita a una habitación
+              11. Mostrar visitas
               0. Salir
               Ingrese la acción a realizar: """;
     
@@ -48,19 +51,28 @@ public class MenuCLI implements Serializable{
                 case "3":
                     pacientesIngresadosVw.updateDatosClinicos();
                     break;
-                case "a":
+                case "4":
+                    pacientesIngresadosVw.showHistorialClinico();
+                    break;
+                case "5":
+                    pacientesIngresadosVw.addDiagnostico();
+                    break;
+                case "6":
+                    pacientesIngresadosVw.showDiagnostico();
+                    break;
+                case "7":
                     hospitalVw.peekFreeHabitaciones();
                     break;
-                case "b":
+                case "8":
                     hospitalVw.putPaciente();
                     break;
-                case "c":
+                case "9":
                     hospitalVw.popPaciente();
                     break;
-                case "d":
+                case "10":
                     hospitalVw.addVisita();
                     break;
-                case "e":
+                case "11":
                     hospitalVw.printVisitas();
                     break;
                 default:;

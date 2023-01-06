@@ -19,6 +19,7 @@ public class PacienteMdl implements Serializable{
     private String tipoSangre;
     private String sexo;
     private RegistroDatosClinicosCtrl registroDatosClinicos;
+    private RegistroDiagnosticoCtrl registroDiagnostico;
 
     public PacienteMdl(String cedula, String nombre, String fechaNacimiento, String tipoSangre, String sexo) {
         this.cedula = cedula;
@@ -27,6 +28,7 @@ public class PacienteMdl implements Serializable{
         this.tipoSangre = tipoSangre;
         this.sexo = sexo;
         this.registroDatosClinicos = new RegistroDatosClinicosCtrl();
+        this.registroDiagnostico = new RegistroDiagnosticoCtrl();
     }
 
     public String getNombre() {
@@ -53,5 +55,8 @@ public class PacienteMdl implements Serializable{
         return registroDatosClinicos;
     }
     
-    
+    public RegistroDiagnosticoCtrl getRegistroDiagnostico(){
+        return registroDiagnostico;
+    }
+
 }

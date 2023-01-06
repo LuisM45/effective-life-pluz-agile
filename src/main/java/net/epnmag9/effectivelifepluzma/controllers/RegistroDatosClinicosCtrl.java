@@ -49,4 +49,5 @@ public class RegistroDatosClinicosCtrl implements Serializable{
     public DatosClinicosCtrl getDatosClinicosRecientes() {
         return model.getDatosClinicosRecientes();
     }
+
 }

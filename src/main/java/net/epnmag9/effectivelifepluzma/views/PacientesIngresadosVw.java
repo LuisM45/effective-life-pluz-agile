@@ -70,4 +70,48 @@ public class PacientesIngresadosVw implements Serializable{
         pacienteCtrl.getRegistroDatosClinicos().getView().updateDatosClinicos();
         System.out.println("Datos actualizados exitosamente.");
     }
+    
+    public void showHistorialClinico(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if (pacienteCtrl == null){
+            System.err.println("No existe tal paciente.");
+            return;
+        }
+        pacienteCtrl.getRegistroDatosClinicos().getDatosClinicosRecientes().getVista().printDatosClinicos();
+        
+    }
+    
+    public void addDiagnostico(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if(pacienteCtrl == null){
+            System.out.println("No existe tal paciente");
+            return;
+        }
+        pacienteCtrl.getRegistroDiagnostico().getView().addDiagnostico();
+        System.out.println("Datos añadidos exitosamente: ");
+    }
+    
+    public void showDiagnostico(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if (pacienteCtrl == null){
+            System.err.println("No existe tal paciente.");
+            return;
+        }
+        if (pacienteCtrl.getRegistroDiagnostico().getDiagnosticoRecientes() == null){
+            System.err.println("No exite diagnostico");
+            return;
+        }
+        pacienteCtrl.getRegistroDiagnostico().getDiagnosticoRecientes().getView().printDiagnostico();
+        
+    }
+    
 }

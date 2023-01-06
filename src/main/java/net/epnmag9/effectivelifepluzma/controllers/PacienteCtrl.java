@@ -52,4 +52,9 @@ public class PacienteCtrl implements Serializable{
     public RegistroDatosClinicosCtrl getRegistroDatosClinicos() {
         return model.getRegistroDatosClinicos();
     }
+    
+    public RegistroDiagnosticoCtrl getRegistroDiagnostico(){
+        return model.getRegistroDiagnostico();
+    }
+     
 }

@@ -60,5 +60,4 @@ public class DatosClinicosMdl implements Serializable{
         return observaciones;
     }
     
-    
 }

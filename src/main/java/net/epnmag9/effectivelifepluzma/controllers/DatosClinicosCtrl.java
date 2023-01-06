@@ -55,4 +55,5 @@ public class DatosClinicosCtrl implements Serializable{
     public String getObservaciones() {
         return modelo.getObservaciones();
     }
+
 }

@@ -31,6 +31,27 @@ public class DatosClinicosVw implements Serializable{
         this.controller = controller;
     }
     
+    public void printDatosClinicos(){
+        String formato = """
+                         Altura: %f
+                         Peso: %f
+                         Temperatura: %f
+                         Presion Diastolica: %f
+                         Presion Sistolica: %f
+                         Observaciones: %s
+                         Fecha Ingreso: %s
+                         """;
+        System.out.println(String.format(formato,
+                controller.getAltura(),
+                controller.getPeso(),
+                controller.getTemperatura(),
+                controller.getPresionDiastolica(),
+                controller.getPresionSistolica(),
+                controller.getObservaciones(),
+                controller.getFechaIngreso()));
+        System.out.println("--------------------------------------------------------------------------------");
+    }
+    
     public static DatosClinicosCtrl createDatosClinicos(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Ingrese el peso actual del paciente: ");
