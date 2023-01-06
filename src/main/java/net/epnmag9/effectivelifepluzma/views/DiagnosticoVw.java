@@ -14,10 +14,9 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
  * @author thoma
  */
 public class DiagnosticoVw implements Serializable {
-
     private DiagnosticoCtrl controller;
 
-    public void DiagnositocVw() {
+    public DiagnosticoVw() {
     }
 
     public DiagnosticoVw(DiagnosticoCtrl controller) {

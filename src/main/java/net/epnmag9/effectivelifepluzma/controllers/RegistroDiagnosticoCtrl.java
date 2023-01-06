@@ -14,7 +14,6 @@ import net.epnmag9.effectivelifepluzma.views.RegistroDiagnosticoVw;
  * @author Thomas Tapia
  */
 public class RegistroDiagnosticoCtrl implements Serializable {
-
     private RegistroDiagnosticoMdl model;
     private RegistroDiagnosticoVw view;
 
