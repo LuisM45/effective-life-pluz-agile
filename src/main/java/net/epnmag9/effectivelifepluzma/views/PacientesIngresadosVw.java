@@ -97,5 +97,17 @@ public class PacientesIngresadosVw implements Serializable{
         System.out.println("Datos añadidos exitosamente: ");
     }
     
+    public void showDiagnostico(){
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Ingrese la cedula del paciente: ");
+        String ci = scn.nextLine();
+        PacienteCtrl pacienteCtrl = controller.searchPacienteByCedula(ci);
+        if (pacienteCtrl == null){
+            System.err.println("No existe tal paciente.");
+            return;
+        }
+        pacienteCtrl.getRegistroDiagnostico().getDiagnosticoRecientes().getView().printDiagnostico();
+        
+    }
     
 }

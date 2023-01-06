@@ -31,6 +31,19 @@ public class DiagnosticoVw implements Serializable {
         this.controller = controller;
     }
     
+     public void printDiagnostico(){
+        String formato = """
+                         Doctor: %s
+                         Diagnostico: %s
+                         Fecha Diagnostico: %s
+                         """;
+        System.out.println(String.format(formato,
+                controller.getDoctor(),
+                controller.getDiagnostico(),
+                controller.getFechaDiagnostico()));
+        System.out.println("--------------------------------------------------------------------------------");
+    }
+    
      public static DiagnosticoCtrl createDiagnostico(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Ingrese el nombre del doctor: ");

@@ -32,5 +32,10 @@ public class RegistroDiagnosticoVw implements Serializable{
        controller.pushDiagnostico(DiagnosticoVw.createDiagnostico());
    }
     
+   public void printDiagnostico(){
+       for (DiagnosticoCtrl datos: controller.getDiagnosticosHistoricos()){
+           datos.getView().printDiagnostico();
+       }
+   }
    
 }
