@@ -15,11 +15,13 @@ public class DiagnosticoMdl implements Serializable {
     
     String doctor; //Doctor's name
     String diagnostico;
+    String prescripcion;
     String fechaDiagnostico;
 
-    public DiagnosticoMdl(String doctor, String diagnostico, String fechaDiagnostico) {
+    public DiagnosticoMdl(String doctor, String diagnostico, String prescripcion,String fechaDiagnostico) {
         this.doctor = doctor;
         this.diagnostico = diagnostico;
+        this.prescripcion = prescripcion;
         this.fechaDiagnostico = fechaDiagnostico;
     }
 
@@ -27,6 +29,10 @@ public class DiagnosticoMdl implements Serializable {
         return doctor;
     }
 
+    public String getPrescripcion(){
+        return prescripcion;
+    }
+    
     public String getDiagnostico() {
         return diagnostico;
     }
