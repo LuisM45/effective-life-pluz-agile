@@ -106,6 +106,10 @@ public class PacientesIngresadosVw implements Serializable{
             System.err.println("No existe tal paciente.");
             return;
         }
+        if (pacienteCtrl.getRegistroDiagnostico().getDiagnosticoRecientes() == null){
+            System.err.println("No exite diagnostico");
+            return;
+        }
         pacienteCtrl.getRegistroDiagnostico().getDiagnosticoRecientes().getView().printDiagnostico();
         
     }
