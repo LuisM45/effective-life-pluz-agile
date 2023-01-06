@@ -10,6 +10,7 @@ import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.HospitalCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.PacientesIngresadosCtrl;
+import net.epnmag9.effectivelifepluzma.controllers.VisitaCtrl;
 
 /**
  *
@@ -81,5 +82,37 @@ public class HospitalVw implements Serializable{
         for(HabitacionCtrl habitacionCtrl: control.checkFreeHabitacion())
             System.out.println(habitacionCtrl.getCodigo());
         System.out.println("--------------------------------------------------------------------------------");
+    }
+    
+    public void addVisita(){
+         Scanner s = new Scanner(System.in);
+        System.out.println("Ingrese el código del la habitacion");
+        String codigo = s.nextLine();
+        HabitacionCtrl habitacionCtrl = control.getHabitacion(codigo);
+        if(habitacionCtrl==null){
+            System.out.println("La habitación especificada no existe.");
+            return;
+        }
+        VisitaCtrl visitaCtrl = VisitaVw.createVisita(habitacionCtrl);
+        control.getVisitas().add(visitaCtrl);
+    }
+    
+    public void deleteVisita(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Ingrese el nombre de la visita");
+        String nombre = s.nextLine();
+        VisitaCtrl visitaCtrl = control.getVisitaByNombre(nombre);
+        if(control.getVisitaByNombre(nombre)==null){
+            System.out.println("La visita especificada no existe.");
+            return;
+        }
+        control.getVisitas().remove(visitaCtrl);
+    }
+    
+    public void printVisitas(){
+        System.out.println("Las siguientes visitas estan presentes en el hospital:");
+        for(VisitaCtrl visitaCtrl: control.getVisitas()){
+            visitaCtrl.getView().printVisita();
+        }
     }
 }

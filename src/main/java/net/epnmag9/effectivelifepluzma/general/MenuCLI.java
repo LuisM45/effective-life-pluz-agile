@@ -26,6 +26,8 @@ public class MenuCLI implements Serializable{
               a. Ver habitaciones libres
               b. Ingresar un paciente a una habitación
               c. Remover un paciente de una habitación
+              d. Ingresar una visita a una habitación
+              e. Mostrar visitas
               0. Salir
               Ingrese la acción a realizar: """;
     
@@ -54,6 +56,12 @@ public class MenuCLI implements Serializable{
                     break;
                 case "c":
                     hospitalVw.popPaciente();
+                    break;
+                case "d":
+                    hospitalVw.addVisita();
+                    break;
+                case "e":
+                    hospitalVw.printVisitas();
                     break;
                 default:;
             }
