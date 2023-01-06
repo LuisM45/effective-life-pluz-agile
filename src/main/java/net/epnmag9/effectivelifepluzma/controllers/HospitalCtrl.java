@@ -71,4 +71,17 @@ public class HospitalCtrl implements Serializable{
         }
         return null;
     }
+    
+    public List<VisitaCtrl> getVisitas() {
+        return model.getVisitas();
+    }
+    
+    public VisitaCtrl getVisitaByNombre(String nombre) {
+        for(VisitaCtrl visitaCtrl: getVisitas()){
+            if(visitaCtrl.getName().equals(nombre))
+                return visitaCtrl;
+        }
+        return null;
+    }
+    
 }
