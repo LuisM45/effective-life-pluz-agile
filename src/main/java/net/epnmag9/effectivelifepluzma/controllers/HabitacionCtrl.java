@@ -5,6 +5,7 @@
  */
 package net.epnmag9.effectivelifepluzma.controllers;
 
+import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.models.HabitacionMdl;
 import net.epnmag9.effectivelifepluzma.views.HabitacionVw;
 
@@ -12,7 +13,7 @@ import net.epnmag9.effectivelifepluzma.views.HabitacionVw;
  *
  * @author Usuario
  */
-public class HabitacionCtrl {
+public class HabitacionCtrl implements Serializable{
     private HabitacionVw view;
     private HabitacionMdl model;
 
