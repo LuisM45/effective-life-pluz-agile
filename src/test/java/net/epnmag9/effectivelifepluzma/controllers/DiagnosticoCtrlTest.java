@@ -22,8 +22,9 @@ public class DiagnosticoCtrlTest {
     public void when_datosClinicos_do_create_check_equals(){
         String diagnostico = "El paciente tiene Amigdalitis";
         String doctor = "Julio";
+        String prescricpcion = "Ibuprofeno 500mg";
         String fechaDiagnostico = "01/01/2023";
-        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl(doctor, diagnostico, fechaDiagnostico);
+        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl(doctor, diagnostico,prescricpcion, fechaDiagnostico);
         assertEquals(doctor, diagnosticoCtrl.getDoctor());
         assertEquals(diagnostico, diagnosticoCtrl.getDiagnostico());
         assertEquals(fechaDiagnostico, diagnosticoCtrl.getFechaDiagnostico());

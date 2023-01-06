@@ -20,7 +20,7 @@ public class RegistroDiagnosticoCtrlTest {
     @Test
     public void when_diagnostico_do_register_check_equals(){
         RegistroDiagnosticoCtrl regDiagnosticoCtrl = new RegistroDiagnosticoCtrl();
-        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl("Juan", "Faringitis", "01/01/2023");
+        DiagnosticoCtrl diagnosticoCtrl = new DiagnosticoCtrl("Juan", "Faringitis","Ibuprofeno cada 8 horas", "01/01/2023");
         
         regDiagnosticoCtrl.pushDiagnostico(diagnosticoCtrl);
         assertEquals(diagnosticoCtrl, regDiagnosticoCtrl.getDiagnosticoRecientes());
@@ -29,8 +29,8 @@ public class RegistroDiagnosticoCtrlTest {
     @Test
     public void when_variousDiagnostico_do_register_check_historic() {
         RegistroDiagnosticoCtrl regDiagnosticosCtrl = new RegistroDiagnosticoCtrl();
-        DiagnosticoCtrl diagnosticoCtrl1 = new DiagnosticoCtrl("Jorge","Amigdatilis","01/12/2022");
-        DiagnosticoCtrl diagnosticoCtrl2 = new DiagnosticoCtrl("Jorge","Presion Alta","01/12/2023");
+        DiagnosticoCtrl diagnosticoCtrl1 = new DiagnosticoCtrl("Jorge","Amigdatilis","Paracetamol 500mg","01/12/2022");
+        DiagnosticoCtrl diagnosticoCtrl2 = new DiagnosticoCtrl("Jorge","Presion Alta","Acitromicina 250mg","01/12/2023");
         
         regDiagnosticosCtrl.pushDiagnostico(diagnosticoCtrl1);
         regDiagnosticosCtrl.pushDiagnostico(diagnosticoCtrl2);
