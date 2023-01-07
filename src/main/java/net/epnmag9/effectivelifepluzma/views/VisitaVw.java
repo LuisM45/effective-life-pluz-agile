@@ -32,7 +32,7 @@ public class VisitaVw  implements Serializable{
     }
     
     public void printVisita() {
-        String format = "%s en la habitación %s";
+        String format = "\t%s en la habitación %s";
         System.out.println(String.format(format,
                 controller.getName(),
                 controller.getHabitacionCtrl().getCodigo()));

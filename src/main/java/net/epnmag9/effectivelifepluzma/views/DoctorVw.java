@@ -66,7 +66,6 @@ public class DoctorVw implements Serializable {
     
     public void agregarTarea(){
         TareaCtrl tareaCtrl = TareaVw.createTarea(doctorCtrl);
-        doctorCtrl.addTarea(tareaCtrl);
     }
 
 }

@@ -23,10 +23,10 @@ public class PacienteVw implements Serializable{
     public void mostrarPaciente(){
         String formato = """
                          %s
-                         Fecha de nacimiento: %s
-                         Número de cédula: %s
-                         Tipo de sangre: %s
-                         Sexo: %s
+                         \tFecha de nacimiento: %s
+                         \tNúmero de cédula: %s
+                         \tTipo de sangre: %s
+                         \tSexo: %s
                          """;
         System.out.println(String.format(formato,
                 controller.getNombre(),
@@ -40,8 +40,8 @@ public class PacienteVw implements Serializable{
     public void mostrarResumenPaciente() {
         String formato = """
                          %s
-                         Número de cédula: %s
-                         Número de visitas: %s
+                         \tNúmero de cédula: %s
+                         \tNúmero de visitas: %s
                          """;
         System.out.println(String.format(formato,
                 controller.getNombre(),

@@ -48,8 +48,8 @@ public class TareaVw implements Serializable {
     }
 
     public void mostrarTarea(TareaCtrl tarea) {
-        System.out.println("Descripcion de la tarea: " + tarea.getDescripcion());
-        System.out.println("Estado de la tarea: " + tarea.getEstado());
+        System.out.println("\tDescripcion de la tarea: " + tarea.getDescripcion());
+        System.out.println("\tEstado de la tarea: " + tarea.getEstado());
     }
 
 }

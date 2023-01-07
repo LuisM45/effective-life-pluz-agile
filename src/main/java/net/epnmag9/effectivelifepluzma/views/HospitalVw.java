@@ -140,7 +140,6 @@ public class HospitalVw implements Serializable {
         System.out.println("Ingrese el nombre de la visita");
         String nombre = s.nextLine();
         VisitaCtrl visitaCtrl = control.getVisitaByNombre(nombre);
-        System.out.println(visitaCtrl);
         if (control.getVisitaByNombre(nombre) == null) {
             System.out.println("La visita especificada no existe.");
             return;
@@ -161,6 +160,8 @@ public class HospitalVw implements Serializable {
      * ****** Generacion de informes ******
      */
     public void printEntradasSalidas() {
+        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("\t\t\tInforme de entradas y salidas ");
         pacientesIngresadosVw.printEntradasSalidas();
         System.out.println("Se registraron las siguientes entradas de visitas al hospital :");
         for (VisitaCtrl visitaCtrl : control.getVisitas()) {
@@ -178,7 +179,6 @@ public class HospitalVw implements Serializable {
         pacientesIngresadosVw.printEstadisticasPacientes();
         System.out.println("Número total de visitas actualmente en el hospital: " + control.getVisitas().size());
         System.out.println("Número total de salida de visitas registradas: " + control.getVisitasAnteriores().size());
-        System.out.println("--------------------------------------------------------------------------------");
     }
 
     public void printInformeHospital() {
