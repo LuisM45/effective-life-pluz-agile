@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  * @author luism
  */
 public class PacientesIngresadosCtrlTest {
-    
+
     public PacientesIngresadosCtrlTest() {
     }
 
@@ -27,13 +27,27 @@ public class PacientesIngresadosCtrlTest {
         String fechaNacimiento = "02/03/1975";
         String tipoSangre = "A+";
         String sexo = "F";
-        
-        PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula,nombre,fechaNacimiento,tipoSangre,sexo);
+
+        PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
         PacientesIngresadosCtrl pic = new PacientesIngresadosCtrl();
         pic.addPaciente(pacienteCtrl);
-        
+
         int pacienteIdx = pic.getPacientes().indexOf(pacienteCtrl);
-        assertTrue(pacienteIdx>=0);
+        assertTrue(pacienteIdx >= 0);
     }
-    
+
+    @Test
+    public void when_paciente_do_remove_then_add_to_salidas() {
+        String cedula = "123456787";
+        String nombre = "Ruth Benavides";
+        String fechaNacimiento = "02/03/1975";
+        String tipoSangre = "A+";
+        String sexo = "F";
+
+        PacienteCtrl pacienteCtrl = new PacienteCtrl(cedula, nombre, fechaNacimiento, tipoSangre, sexo);
+        PacientesIngresadosCtrl pic = new PacientesIngresadosCtrl();
+        pic.addSalidas(pacienteCtrl);
+
+        assertEquals(1, pic.getPacientesAntiguos().size());
+    }
 }

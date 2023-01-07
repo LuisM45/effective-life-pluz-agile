@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.HospitalCtrl;
+import net.epnmag9.effectivelifepluzma.controllers.PacienteCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.PacientesIngresadosCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.VisitaCtrl;
 
@@ -31,6 +32,14 @@ public class HospitalVw implements Serializable{
 
     public void setPacientesIngresadosVw(PacientesIngresadosVw pacientesIngresadosVw) {
         this.pacientesIngresadosVw = pacientesIngresadosVw;
+    }
+    
+    public PacientesIngresadosCtrl getPacientesIngresadosCtrl() {
+        return pacientesIngresadosCtrl;
+    }
+    
+    public void setControl(PacientesIngresadosCtrl control) {
+        this.pacientesIngresadosCtrl = control;
     }
     
     public static HospitalVw createHospital(PacientesIngresadosVw pacientesIngresadosVw){
@@ -74,7 +83,11 @@ public class HospitalVw implements Serializable{
             habitacionCtrl = HabitacionVw.createHabitacion(codigo, this);
             control.addHabitacion(habitacionCtrl);
         }
-        //pacientesIngresadosCtrl.addSalida(habitacionCtrl.peekPaciente());
+        PacienteCtrl pacienteCtrl = habitacionCtrl.peekPaciente();
+        System.out.println(pacienteCtrl);
+        pacientesIngresadosCtrl = new PacientesIngresadosCtrl();
+        pacientesIngresadosCtrl.addSalidas(pacienteCtrl);
+        pacientesIngresadosCtrl.addSalidas(pacienteCtrl);
         habitacionCtrl.getView().popPaciente();
     }
     
@@ -104,6 +117,7 @@ public class HospitalVw implements Serializable{
         System.out.println("Ingrese el nombre de la visita");
         String nombre = s.nextLine();
         VisitaCtrl visitaCtrl = control.getVisitaByNombre(nombre);
+        System.out.println(visitaCtrl);
         if(control.getVisitaByNombre(nombre)==null){
             System.out.println("La visita especificada no existe.");
             return;

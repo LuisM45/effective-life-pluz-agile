@@ -13,13 +13,14 @@ import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
  *
  * @author luism
  */
-public class MenuCLI implements Serializable{
+public class MenuCLI implements Serializable {
+
     private static final Scanner scn = new Scanner(System.in);
     private final PacientesIngresadosVw pacientesIngresadosVw = PacientesIngresadosVw.createPacientesIngresados();
     private final HospitalVw hospitalVw = HospitalVw.createHospital(pacientesIngresadosVw);
-    
-    final static String mainMenu = 
-              """
+
+    final static String mainMenu
+            = """
               -------------------------------------------------------
               \t\tLife Plus
               -------------------------------------------------------
@@ -41,30 +42,59 @@ public class MenuCLI implements Serializable{
               0. Salir
               Ingrese la acción a realizar: 
               -------------------------------------------------------""";
-    
-    public void run(){
+
+    public void run() {
         while (true) {
             Main.save(this);
             System.out.println(mainMenu);
             switch (scn.nextLine()) {
-                case "0" -> System.exit(0);
-                case "1" -> pacientesIngresadosVw.registrarPaciente();
-                case "2" -> pacientesIngresadosVw.addDatosClinicos();
-                case "3" -> pacientesIngresadosVw.updateDatosClinicos();
-                case "4" -> pacientesIngresadosVw.showHistorialClinico();
-                case "5" -> pacientesIngresadosVw.printSugerenciaDiagnostico();
-                case "6" -> pacientesIngresadosVw.addDiagnostico();
-                case "7" -> pacientesIngresadosVw.showDiagnostico();
-                case "8" -> hospitalVw.peekFreeHabitaciones();
-                case "9" -> hospitalVw.putPaciente();
-                case "10" -> hospitalVw.popPaciente();
-                case "11" -> hospitalVw.addVisita();
-                case "12" -> hospitalVw.deleteVisita();
-                case "13" -> hospitalVw.printVisitas();
-                case "14" -> hospitalVw.printEntradasSalidas(); 
-                             //pacientesIngresadosVw.printEntradasSalidas();
-                
-                default -> {
+                case "0":
+                    System.exit(0);
+                case "1":
+                    pacientesIngresadosVw.registrarPaciente();
+                    break;
+                case "2":
+                    pacientesIngresadosVw.addDatosClinicos();
+                    break;
+                case "3":
+                    pacientesIngresadosVw.updateDatosClinicos();
+                    break;
+                case "4":
+                    pacientesIngresadosVw.showHistorialClinico();
+                    break;
+                case "5":
+                    pacientesIngresadosVw.printSugerenciaDiagnostico();
+                    break;
+                case "6":
+                    pacientesIngresadosVw.addDiagnostico();
+                    break;
+                case "7":
+                    pacientesIngresadosVw.showDiagnostico();
+                    break;
+                case "8":
+                    hospitalVw.peekFreeHabitaciones();
+                    break;
+                case "9":
+                    hospitalVw.putPaciente();
+                    break;
+                case "10":
+                    hospitalVw.popPaciente();
+                    break;
+                case "11":
+                    hospitalVw.addVisita();
+                    break;
+                case "12":
+                    hospitalVw.deleteVisita();
+                    break;
+                case "13":
+                    hospitalVw.printVisitas();
+                    break;
+                case "14":
+                    hospitalVw.printEntradasSalidas();
+                    pacientesIngresadosVw.printEntradasSalidas();
+                    break;
+
+                default: {
                     ;
                 }
             }

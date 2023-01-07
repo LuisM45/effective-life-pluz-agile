@@ -22,8 +22,6 @@ public class PacientesIngresadosCtrl implements Serializable{
         this.view = view;
     }
     
-    
-    
     public PacientesIngresadosCtrl(PacientesIngresadosVw view, PacientesIngresadosMdl model) {
         this.view = view;
         this.model = model;
@@ -31,6 +29,10 @@ public class PacientesIngresadosCtrl implements Serializable{
     
     public void addPaciente(PacienteCtrl pacienteCtrl){
         model.getPacientes().add(pacienteCtrl);
+    }
+    
+    public void deletePaciente(PacienteCtrl pacienteCtrl){
+        model.getPacientes().remove(pacienteCtrl);
     }
     
     public List<PacienteCtrl> getPacientes() {
@@ -41,10 +43,9 @@ public class PacientesIngresadosCtrl implements Serializable{
         return model.getPacientesAntiguos();
     }
     
-    public void addSalida(PacienteCtrl pacienteCtrl){
+    public void addSalidas(PacienteCtrl pacienteCtrl){
         model.getPacientesAntiguos().add(pacienteCtrl);
     }
-    
     
     public PacienteCtrl searchPacienteByCedula(String cedula) {
         for(PacienteCtrl p: model.getPacientes()){
