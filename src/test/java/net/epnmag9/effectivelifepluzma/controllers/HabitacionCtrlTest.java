@@ -48,4 +48,15 @@ public class HabitacionCtrlTest {
         habitacionCtrl.popPaciente();
         assertTrue(habitacionCtrl.isEmpty());
     }
+    
+    @Test
+    public void when_visita_do_add_then_check_num_visitas() {
+        HabitacionCtrl habitacionCtrl = new HabitacionCtrl("E");
+        PacienteCtrl pacienteCtrl = new PacienteCtrl("1234567897", "Marco Bolez", "01/01/2001", "A+", "M");
+        
+        habitacionCtrl.putPaciente(pacienteCtrl);
+        habitacionCtrl.registrarVisita();
+
+        assertEquals(1, pacienteCtrl.getNumeroVisitas());
+    }
 }

@@ -6,6 +6,7 @@ package net.epnmag9.effectivelifepluzma.controllers;
 
 import java.util.List;
 import net.epnmag9.effectivelifepluzma.views.HospitalVw;
+import net.epnmag9.effectivelifepluzma.views.VisitaVw;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
