@@ -37,6 +37,15 @@ public class PacientesIngresadosCtrl implements Serializable{
         return model.getPacientes();
     }
     
+    public List<PacienteCtrl> getPacientesAntiguos() {
+        return model.getPacientesAntiguos();
+    }
+    
+    public void addSalida(PacienteCtrl pacienteCtrl){
+        model.getPacientesAntiguos().add(pacienteCtrl);
+    }
+    
+    
     public PacienteCtrl searchPacienteByCedula(String cedula) {
         for(PacienteCtrl p: model.getPacientes()){
             if(cedula.equals(p.getCedula())) return p;

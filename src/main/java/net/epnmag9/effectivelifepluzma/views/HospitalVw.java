@@ -19,6 +19,7 @@ import net.epnmag9.effectivelifepluzma.controllers.VisitaCtrl;
 public class HospitalVw implements Serializable{
     private HospitalCtrl control;
     private PacientesIngresadosVw pacientesIngresadosVw;
+    private PacientesIngresadosCtrl pacientesIngresadosCtrl;
 
     public HospitalVw(PacientesIngresadosVw pacientesIngresadosVw) {
         this.pacientesIngresadosVw = pacientesIngresadosVw;
@@ -73,6 +74,7 @@ public class HospitalVw implements Serializable{
             habitacionCtrl = HabitacionVw.createHabitacion(codigo, this);
             control.addHabitacion(habitacionCtrl);
         }
+        //pacientesIngresadosCtrl.addSalida(habitacionCtrl.peekPaciente());
         habitacionCtrl.getView().popPaciente();
     }
     
@@ -106,7 +108,9 @@ public class HospitalVw implements Serializable{
             System.out.println("La visita especificada no existe.");
             return;
         }
+        control.getVisitasAnteriores().add(visitaCtrl);
         control.getVisitas().remove(visitaCtrl);
+        System.out.println("Se registró la salida de la visita correctamente.");
     }
     
     public void printVisitas(){
@@ -115,4 +119,21 @@ public class HospitalVw implements Serializable{
             visitaCtrl.getView().printVisita();
         }
     }
+    
+    /******** Generacion de informes *******/
+    public void printEntradasSalidas(){
+        System.out.println("Se registraron las siguientes entradas de visitas al hospital :");
+        for(VisitaCtrl visitaCtrl: control.getVisitas()){
+            visitaCtrl.getView().printVisita();
+        }
+        System.out.println("Se registraron las siguientes salidas de visitas del hospital :");
+        for(VisitaCtrl visitaCtrl: control.getVisitasAnteriores()){
+            visitaCtrl.getView().printVisita();
+        }
+    }
+    
+    
+    
+    
+    
 }

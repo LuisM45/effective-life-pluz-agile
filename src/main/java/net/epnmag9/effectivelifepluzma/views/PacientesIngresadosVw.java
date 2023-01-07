@@ -125,4 +125,17 @@ public class PacientesIngresadosVw implements Serializable{
         }
         DiagnosticoVw.printSugerenciaDiagnostico(pacienteCtrl);
     }
+    
+    
+    /******** Generacion de informes *******/
+    public void printEntradasSalidas(){
+        System.out.println("Se registraron las siguientes ingresos de pacientes al hospital :");
+        for(PacienteCtrl pacientesIngresadosCtrl: controller.getPacientes()){
+            pacientesIngresadosCtrl.getPacienteVw().mostrarPaciente();
+        }
+        System.out.println("Se registraron las siguientes salidas de pacientes del hospital :");
+        for(PacienteCtrl pacientesIngresadosCtrl: controller.getPacientesAntiguos()){
+            pacientesIngresadosCtrl.getPacienteVw().mostrarPaciente();
+        }
+    }
 }

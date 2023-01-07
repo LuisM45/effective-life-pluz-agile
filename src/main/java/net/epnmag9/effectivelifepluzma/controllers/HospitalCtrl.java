@@ -76,6 +76,10 @@ public class HospitalCtrl implements Serializable{
         return model.getVisitas();
     }
     
+    public List<VisitaCtrl> getVisitasAnteriores() {
+        return model.getVisitasAnteriores();
+    }
+    
     public VisitaCtrl getVisitaByNombre(String nombre) {
         for(VisitaCtrl visitaCtrl: getVisitas()){
             if(visitaCtrl.getName().equals(nombre))
@@ -83,5 +87,7 @@ public class HospitalCtrl implements Serializable{
         }
         return null;
     }
+    
+    
     
 }

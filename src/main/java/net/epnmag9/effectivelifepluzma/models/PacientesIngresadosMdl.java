@@ -12,14 +12,19 @@ import net.epnmag9.effectivelifepluzma.controllers.*;
 
 public class PacientesIngresadosMdl implements Serializable{
     private List<PacienteCtrl> pacientes;
+    private List<PacienteCtrl> pacientesAntiguos;
 
     public PacientesIngresadosMdl() {
         pacientes = new ArrayList<>();
+        pacientesAntiguos = new ArrayList<>();
     }
 
-    
-    
     public List<PacienteCtrl> getPacientes() {
         return pacientes;
     }
+    
+    public List<PacienteCtrl> getPacientesAntiguos() {
+        return pacientesAntiguos;
+    }
+    
 }

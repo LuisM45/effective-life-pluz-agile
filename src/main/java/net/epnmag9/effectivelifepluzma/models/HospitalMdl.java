@@ -19,10 +19,12 @@ import net.epnmag9.effectivelifepluzma.controllers.VisitaCtrl;
 public class HospitalMdl implements Serializable{
     private List<HabitacionCtrl> habitaciones;
     private List<VisitaCtrl> visitas;
+    private List<VisitaCtrl> visitasAnteriores;
 
     public HospitalMdl() {
         habitaciones = new ArrayList<>();
         visitas = new LinkedList<>();
+        visitasAnteriores = new LinkedList<>();
     }
 
     public List<HabitacionCtrl> getHabitaciones() {
@@ -31,6 +33,10 @@ public class HospitalMdl implements Serializable{
 
     public List<VisitaCtrl> getVisitas() {
         return visitas;
+    }
+    
+    public List<VisitaCtrl> getVisitasAnteriores() {
+        return visitasAnteriores;
     }
     
     

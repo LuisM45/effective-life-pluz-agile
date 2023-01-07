@@ -24,12 +24,14 @@ public class PacienteVw implements Serializable{
         String formato = """
                          %s
                          Fecha de nacimiento: %s
+                         Número de cédula: %s
                          Tipo de sangre: %s
                          Sexo: %s
                          """;
         System.out.println(String.format(formato,
                 controller.getNombre(),
                 controller.getFechaNacimiento(),
+                controller.getCedula(),
                 controller.getTipoSangre(),
                 controller.getSexo()));
         System.out.println("--------------------------------------------------------------------------------");
