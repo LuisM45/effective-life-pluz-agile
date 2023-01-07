@@ -138,4 +138,16 @@ public class PacientesIngresadosVw implements Serializable{
             pacientesIngresadosCtrl.getPacienteVw().mostrarPaciente();
         }
     }
+    
+    public void printEstadisticasPacientes(){
+        System.out.println("Número total de pacientes hospitalizados: " + controller.getPacientes().size());
+        for(PacienteCtrl pacientesIngresadosCtrl: controller.getPacientes()){
+            pacientesIngresadosCtrl.getPacienteVw().mostrarResumenPaciente();
+        }
+        System.out.println("\nNúmero total de pacientes dados de alta: " + controller.getPacientesAntiguos().size()); 
+                for(PacienteCtrl pacientesIngresadosCtrl: controller.getPacientesAntiguos()){
+            pacientesIngresadosCtrl.getPacienteVw().mostrarResumenPaciente();
+        }
+    }
+    
 }

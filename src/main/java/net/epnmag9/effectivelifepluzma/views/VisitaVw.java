@@ -45,9 +45,11 @@ public class VisitaVw  implements Serializable{
         VisitaCtrl visitaCtrl = new VisitaCtrl(name, habitacionCtrl);
         VisitaVw visitaVw = new VisitaVw(visitaCtrl);
         visitaCtrl.setView(visitaVw);
+        habitacionCtrl.registrarVisita();
         System.out.println(String.format("Se ha registrado correctamente %s como visita a la habitación %s",
                 name,habitacionCtrl.getCodigo()));
         return visitaCtrl;
     }
+    
     
 }

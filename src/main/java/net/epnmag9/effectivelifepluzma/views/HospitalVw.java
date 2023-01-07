@@ -133,6 +133,7 @@ public class HospitalVw implements Serializable{
     
     /******** Generacion de informes *******/
     public void printEntradasSalidas(){
+        pacientesIngresadosVw.printEntradasSalidas();
         System.out.println("Se registraron las siguientes entradas de visitas al hospital :");
         for(VisitaCtrl visitaCtrl: control.getVisitas()){
             visitaCtrl.getView().printVisita();
@@ -144,7 +145,14 @@ public class HospitalVw implements Serializable{
     }
     
     
-    
-    
+    public void printEstadisticasHospital(){
+        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("\t\t\tInforme general de Pacientes"); 
+        pacientesIngresadosVw.printEstadisticasPacientes();
+        System.out.println("Número total de visitas actualmente en el hospital: " + control.getVisitas().size());
+        System.out.println("Número total de salida de visitas registradas: " + control.getVisitasAnteriores().size()); 
+        System.out.println("--------------------------------------------------------------------------------");
+    }
+      
     
 }

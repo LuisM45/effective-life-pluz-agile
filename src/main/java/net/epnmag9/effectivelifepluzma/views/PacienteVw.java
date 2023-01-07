@@ -36,6 +36,20 @@ public class PacienteVw implements Serializable{
                 controller.getSexo()));
         System.out.println("--------------------------------------------------------------------------------");
     }
+    
+        public void mostrarResumenPaciente(){
+        String formato = """
+                         %s
+                         Número de cédula: %s
+                         Número de visitas: %s
+                         """;
+        System.out.println(String.format(formato,
+                controller.getNombre(),
+                controller.getCedula(),
+                controller.getNumeroVisitas()));
+        System.out.println("--------------------------------------------------------------------------------");
+    }
+    
 
     public PacienteCtrl getController() {
         return controller;
