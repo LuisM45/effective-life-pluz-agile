@@ -6,6 +6,7 @@ package net.epnmag9.effectivelifepluzma.controllers;
 
 import java.io.Serializable;
 import net.epnmag9.effectivelifepluzma.models.InformeMdl;
+import net.epnmag9.effectivelifepluzma.views.InformeVw;
 
 /**
  *
@@ -13,9 +14,10 @@ import net.epnmag9.effectivelifepluzma.models.InformeMdl;
  */
 public class InformeCtrl  implements Serializable{
     private InformeMdl model;
-    private InformeMdl view;
+    private InformeVw view;
 
     public InformeCtrl() { 
+        model = new InformeMdl();
     }
 
     public InformeMdl getModel() {
@@ -26,29 +28,29 @@ public class InformeCtrl  implements Serializable{
         this.model = model;
     }
 
-    public InformeMdl getView() {
+    public InformeVw getView() {
         return view;
     }
 
-    public void setView(InformeMdl view) {
+    public void setView(InformeVw view) {
         this.view = view;
     }
     
 
     public int getPacientesIngresado() {
-        return 0;
+        return model.getPacientesIngresados();
     }
     
     public int getPacientesAlta() {
-        return 0;
+        return model.getPacientesAlta();
     }
     
     public int getHabitacionesLibres() {
-        return 0;
+        return model.getHabitacionesLibres();
     }
     
     public int getHabitacionesOcupadas() {
-        return 0;
+        return model.getHabitacionesOcupadas();
     }
     
     public void setPacientesIngresado(int num) {

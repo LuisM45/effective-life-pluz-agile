@@ -4,21 +4,23 @@
  */
 package net.epnmag9.effectivelifepluzma.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Steven
  */
-public class InformeMdl {
+public class InformeMdl implements Serializable {
     private int pacientesIngresados;
     private int pacientesAlta;
     private int habitacionesLibres;
     private int habitacionesOcupadas;
 
-    public InformeMdl(int pacientesIngresados, int pacientesAlta, int habitacionesLibres, int habitacionesOcupadas) {
-        this.pacientesIngresados = pacientesIngresados;
-        this.pacientesAlta = pacientesAlta;
-        this.habitacionesLibres = habitacionesLibres;
-        this.habitacionesOcupadas = habitacionesOcupadas;
+    public InformeMdl() {
+        this.pacientesIngresados = 0;
+        this.pacientesAlta = 0;
+        this.habitacionesLibres = 0;
+        this.habitacionesOcupadas = 0;
     }
 
     public int getPacientesIngresados() {
@@ -36,7 +38,20 @@ public class InformeMdl {
     public int getHabitacionesOcupadas() {
         return habitacionesOcupadas;
     }
-    
-    
-    
+
+    public void setPacientesIngresados(int num) {
+        this.pacientesIngresados = this.pacientesIngresados + num;
+    }
+
+    public void setPacientesAlta(int num) {
+        this.pacientesAlta = this.pacientesAlta + num;
+    }
+
+    public void setHabitacionesLibres(int num) {
+        this.habitacionesLibres = this.habitacionesLibres + num;
+    }
+  
+    public void setHabitacionesOcupadas(int num) {
+        this.habitacionesOcupadas = this.habitacionesOcupadas + num;
+    }
 }

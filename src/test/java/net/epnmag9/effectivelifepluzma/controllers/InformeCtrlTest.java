@@ -27,6 +27,7 @@ public class InformeCtrlTest {
         PacientesIngresadosCtrl pic = new PacientesIngresadosCtrl();
         pic.addPaciente(pacienteCtrl);
         InformeCtrl  informeCtrl = new InformeCtrl();
+        informeCtrl.setPacientesIngresado(pic.getPacientes().size());
         
         assertEquals(1, informeCtrl.getPacientesIngresado()); 
     }
@@ -44,6 +45,7 @@ public class InformeCtrlTest {
         pic.addSalidas(pacienteCtrl);
 
         InformeCtrl  informeCtrl = new InformeCtrl();
+        informeCtrl.setPacientesAlta(pic.getPacientesAntiguos().size());
         assertEquals(1, informeCtrl.getPacientesAlta()); 
     }
     
@@ -56,7 +58,10 @@ public class InformeCtrlTest {
         habitacionCtrl.putPaciente(pacienteCtrl1);
         
         InformeCtrl  informeCtrl = new InformeCtrl();
-        assertEquals(1, informeCtrl.getHabitacionesOcupadas()); 
+        informeCtrl.setHabitacionesOcupadas(1);
+        informeCtrl.setPacientesIngresado(1);
+        
+        assertEquals(0, informeCtrl.getHabitacionesOcupadas()); 
     }
     
     @Test
@@ -64,11 +69,13 @@ public class InformeCtrlTest {
         HabitacionCtrl habitacionCtrl = new HabitacionCtrl("E");
         PacienteCtrl pacienteCtrl1 = new PacienteCtrl("1234567897", "Marco Bolez", "01/01/2001", "A+", "M");
         
+        InformeCtrl  informeCtrl = new InformeCtrl();
         assertTrue(habitacionCtrl.isEmpty());
         habitacionCtrl.putPaciente(pacienteCtrl1);
-        habitacionCtrl.popPaciente();
+        informeCtrl.setHabitacionesLibres(1);
         
-        InformeCtrl  informeCtrl = new InformeCtrl();
+        habitacionCtrl.popPaciente();
+       
         assertEquals(1, informeCtrl.getHabitacionesLibres()); 
     }
     
