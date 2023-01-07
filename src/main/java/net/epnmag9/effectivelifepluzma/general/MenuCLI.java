@@ -38,7 +38,7 @@ public class MenuCLI implements Serializable {
               12. Registrar salida de una visita 
               13. Mostrar visitas
               14. Mostrar entradas y salidas del hospital
-              15. Mostrar pacientes que visitaron el hospital
+              15. Mostrar estadisticas del hospital
               0. Salir
               Ingrese la acción a realizar: 
               --------------------------------------------------------------------------------""";
@@ -91,9 +91,10 @@ public class MenuCLI implements Serializable {
                     break;
                 case "14":
                     hospitalVw.printEntradasSalidas();
-                    pacientesIngresadosVw.printEntradasSalidas();
                     break;
-
+                case "15":
+                    hospitalVw.printEstadisticasHospital();
+                    break;
                 default: {
                     ;
                 }

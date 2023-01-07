@@ -56,5 +56,13 @@ public class PacienteCtrl implements Serializable{
     public RegistroDiagnosticoCtrl getRegistroDiagnostico(){
         return model.getRegistroDiagnostico();
     }
+    
+    public int getNumeroVisitas() {
+        return model.getNumeroVisitas();
+    }
+    
+    public void setNumeroVisitas() {
+        model.registrarVisita();
+    }
      
 }

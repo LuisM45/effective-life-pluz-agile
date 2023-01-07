@@ -12,7 +12,8 @@ import net.epnmag9.effectivelifepluzma.views.VisitaVw;
  *
  * @author luism
  */
-public class VisitaCtrl  implements Serializable{
+public class VisitaCtrl implements Serializable {
+
     private VisitaMdl model;
     private VisitaVw view;
 
@@ -27,7 +28,7 @@ public class VisitaCtrl  implements Serializable{
     public void setView(VisitaVw view) {
         this.view = view;
     }
-    
+
     public String getName() {
         return model.getName();
     }
@@ -35,6 +36,5 @@ public class VisitaCtrl  implements Serializable{
     public HabitacionCtrl getHabitacionCtrl() {
         return model.getHabitacionCtrl();
     }
-    
-    
+
 }

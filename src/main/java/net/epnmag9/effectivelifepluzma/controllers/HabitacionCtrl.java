@@ -53,4 +53,8 @@ public class HabitacionCtrl implements Serializable{
         return model.getPaciente()==null;
     }
     
+    public void registrarVisita(){
+        model.getPaciente().setNumeroVisitas();
+    }
+    
 }
