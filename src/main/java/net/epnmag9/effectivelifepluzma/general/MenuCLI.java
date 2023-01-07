@@ -7,6 +7,7 @@ package net.epnmag9.effectivelifepluzma.general;
 import java.io.Serializable;
 import java.util.Scanner;
 import net.epnmag9.effectivelifepluzma.views.HospitalVw;
+import net.epnmag9.effectivelifepluzma.views.InformeVw;
 import net.epnmag9.effectivelifepluzma.views.PacientesIngresadosVw;
 
 /**
@@ -17,7 +18,7 @@ public class MenuCLI implements Serializable {
 
     private static final Scanner scn = new Scanner(System.in);
     private final PacientesIngresadosVw pacientesIngresadosVw = PacientesIngresadosVw.createPacientesIngresados();
-    private final HospitalVw hospitalVw = HospitalVw.createHospital(pacientesIngresadosVw);
+    private final HospitalVw hospitalVw = HospitalVw.createHospital(pacientesIngresadosVw); 
 
     final static String mainMenu
             = """
@@ -39,6 +40,7 @@ public class MenuCLI implements Serializable {
               13. Mostrar visitas
               14. Mostrar entradas y salidas del hospital
               15. Mostrar estadisticas del hospital
+              16. Generar informe del hospital
               0. Salir
               Ingrese la acción a realizar: 
               --------------------------------------------------------------------------------""";
@@ -94,6 +96,9 @@ public class MenuCLI implements Serializable {
                     break;
                 case "15":
                     hospitalVw.printEstadisticasHospital();
+                    break;
+                case "16":
+                    hospitalVw.printInformeHospital();
                     break;
                 default: {
                     ;
