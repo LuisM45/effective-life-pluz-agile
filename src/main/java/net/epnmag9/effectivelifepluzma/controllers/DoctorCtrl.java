@@ -43,7 +43,7 @@ public class DoctorCtrl implements Serializable {
         return model.getTareas();
     }
 
-    public void agregarTarea(TareaCtrl tareaCtrl) {
+    public void addTarea(TareaCtrl tareaCtrl) {
         model.getTareas().add(tareaCtrl);
     }
     

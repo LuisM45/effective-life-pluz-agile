@@ -101,10 +101,31 @@ public class HospitalCtrlTest {
 
         hospitalCtrl.getVisitas().add(visitaCtrl);
         hospitalCtrl.getVisitas().remove(hospitalCtrl.getVisitaByNombre(nombre));
-        
+
         hospitalCtrl.getVisitasAnteriores().add(visitaCtrl);
 
         assertEquals(1, hospitalCtrl.getVisitasAnteriores().size());
+    }
+
+    @Test
+    public void when_doctor_do_add_then_update_doctorsList_in_hospital_data() {
+        HospitalCtrl hospitalCtrl = new HospitalCtrl();
+        DoctorCtrl doctorCtrl = new DoctorCtrl("Marco Bolez", "1234567897");
+
+        hospitalCtrl.addDoctor(doctorCtrl);
+
+        assertEquals(1, hospitalCtrl.getDoctores().size());
+    }
+
+    @Test
+    public void when_doctor_do_add_then_check_information_in_hospital_data() {
+        HospitalCtrl hospitalCtrl = new HospitalCtrl();
+        DoctorCtrl doctorCtrl = new DoctorCtrl("Marco Bolez", "1234567897");
+
+        hospitalCtrl.addDoctor(doctorCtrl);
+
+        assertEquals("Marco Bolez", hospitalCtrl.getDoctores().get(0).getNombre());
+        assertEquals("1234567897", hospitalCtrl.getDoctores().get(0).getCI());
     }
 
 }

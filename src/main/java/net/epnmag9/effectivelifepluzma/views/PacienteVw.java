@@ -37,7 +37,7 @@ public class PacienteVw implements Serializable{
         System.out.println("--------------------------------------------------------------------------------");
     }
     
-        public void mostrarResumenPaciente(){
+    public void mostrarResumenPaciente() {
         String formato = """
                          %s
                          Número de cédula: %s

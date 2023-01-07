@@ -7,6 +7,7 @@ package net.epnmag9.effectivelifepluzma.views;
 
 import java.io.Serializable;
 import java.util.Scanner;
+import net.epnmag9.effectivelifepluzma.controllers.DoctorCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.HospitalCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.InformeCtrl;
@@ -24,6 +25,7 @@ public class HospitalVw implements Serializable {
     private PacientesIngresadosVw pacientesIngresadosVw;
     private PacientesIngresadosCtrl pacientesIngresadosCtrl;
     private InformeCtrl informeCtrl;
+    private DoctorVw doctorVw;
 
     public HospitalVw(PacientesIngresadosVw pacientesIngresadosVw) {
         this.pacientesIngresadosVw = pacientesIngresadosVw;
@@ -49,6 +51,11 @@ public class HospitalVw implements Serializable {
     public void setInformeCtrl() {
         informeCtrl = new InformeCtrl();
     }
+    
+    public void setDoctorVw() {
+        doctorVw = new DoctorVw();
+    }
+    
 
     public static HospitalVw createHospital(PacientesIngresadosVw pacientesIngresadosVw) {
         HospitalCtrl hospitalCtrl = new HospitalCtrl();
@@ -57,6 +64,7 @@ public class HospitalVw implements Serializable {
         hospitalVw.setControl(hospitalCtrl);
         hospitalVw.getPacientesIngresadosCtrl();
         hospitalVw.setInformeCtrl();
+        hospitalVw.setDoctorVw();
         return hospitalVw;
     }
 
@@ -176,6 +184,20 @@ public class HospitalVw implements Serializable {
     public void printInformeHospital() {
         InformeVw informeVw = InformeVw.createInforme(informeCtrl);
         informeVw.printInformeHospital();
+    }
+    
+    /************* Gestion del personal ******************/
+    public void addDoctor(){
+        DoctorCtrl doctorCtrl = DoctorVw.createDoctor();
+        control.addDoctor(doctorCtrl); 
+    }
+    
+    public void printDoctorInfom(){
+        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("\t\t\tInforme general del Personal");
+        for(DoctorCtrl doctor: control.getDoctores()){
+            doctorVw.MostrarDoctor(doctor);
+        }
     }
 
 }
