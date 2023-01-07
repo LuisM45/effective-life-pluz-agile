@@ -80,6 +80,8 @@ public class HabitacionVw implements Serializable{
         else{
             System.out.println(String.format("El paciente %s fue dado de alta",p.getNombre()));
         }
+        pacientesView.getController().getPacientes().remove(p);
+        pacientesView.getController().addSalidas(p);
         return p;
     }
     

@@ -21,9 +21,9 @@ public class MenuCLI implements Serializable {
 
     final static String mainMenu
             = """
-              -------------------------------------------------------
-              \t\tLife Plus
-              -------------------------------------------------------
+              --------------------------------------------------------------------------------
+              \t\t\t\tLife Plus
+              --------------------------------------------------------------------------------
               1. Ingresar Paciente
               2. Agregar Datos Clinicos
               3. Actualizar Datos Clinicos
@@ -41,7 +41,7 @@ public class MenuCLI implements Serializable {
               15. Mostrar pacientes que visitaron el hospital
               0. Salir
               Ingrese la acción a realizar: 
-              -------------------------------------------------------""";
+              --------------------------------------------------------------------------------""";
 
     public void run() {
         while (true) {

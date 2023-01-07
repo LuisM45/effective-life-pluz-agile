@@ -35,7 +35,8 @@ public class HospitalVw implements Serializable{
     }
     
     public PacientesIngresadosCtrl getPacientesIngresadosCtrl() {
-        return pacientesIngresadosCtrl;
+        pacientesIngresadosCtrl =  new PacientesIngresadosCtrl();
+        return pacientesIngresadosCtrl ;
     }
     
     public void setControl(PacientesIngresadosCtrl control) {
@@ -47,6 +48,7 @@ public class HospitalVw implements Serializable{
         HospitalVw hospitalVw = new HospitalVw(pacientesIngresadosVw);
         hospitalCtrl.setView(hospitalVw);
         hospitalVw.setControl(hospitalCtrl);
+        hospitalVw.getPacientesIngresadosCtrl();
         return  hospitalVw;
     }
     
@@ -83,11 +85,6 @@ public class HospitalVw implements Serializable{
             habitacionCtrl = HabitacionVw.createHabitacion(codigo, this);
             control.addHabitacion(habitacionCtrl);
         }
-        PacienteCtrl pacienteCtrl = habitacionCtrl.peekPaciente();
-        System.out.println(pacienteCtrl);
-        pacientesIngresadosCtrl = new PacientesIngresadosCtrl();
-        pacientesIngresadosCtrl.addSalidas(pacienteCtrl);
-        pacientesIngresadosCtrl.addSalidas(pacienteCtrl);
         habitacionCtrl.getView().popPaciente();
     }
     

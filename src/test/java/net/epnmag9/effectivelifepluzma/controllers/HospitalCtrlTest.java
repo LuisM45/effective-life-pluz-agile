@@ -94,12 +94,14 @@ public class HospitalCtrlTest {
         String codigo = "E";
         String nombre = "John Doe";
         HospitalCtrl hospitalCtrl = new HospitalCtrl();
-        HabitacionCtrl habitacionCtrl = new HabitacionCtrl(codigo);
+        HabitacionCtrl habitacionCtrl = new HabitacionCtrl("1");
         hospitalCtrl.addHabitacion(habitacionCtrl);
         VisitaCtrl visitaCtrl = new VisitaCtrl(nombre, habitacionCtrl);
 
         hospitalCtrl.getVisitas().add(visitaCtrl);
         hospitalCtrl.getVisitas().remove(hospitalCtrl.getVisitaByNombre(nombre));
+        
+        hospitalCtrl.getVisitasAnteriores().add(visitaCtrl);
 
         assertEquals(1, hospitalCtrl.getVisitasAnteriores().size());
     }
