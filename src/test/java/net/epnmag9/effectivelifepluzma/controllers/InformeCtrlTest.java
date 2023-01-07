@@ -61,7 +61,8 @@ public class InformeCtrlTest {
         informeCtrl.setHabitacionesOcupadas(1);
         informeCtrl.setPacientesIngresado(1);
         
-        assertEquals(0, informeCtrl.getHabitacionesOcupadas()); 
+        assertEquals(1, informeCtrl.getHabitacionesOcupadas()); 
+        assertEquals(0, informeCtrl.getHabitacionesLibres()); 
     }
     
     @Test
@@ -77,6 +78,7 @@ public class InformeCtrlTest {
         habitacionCtrl.popPaciente();
        
         assertEquals(1, informeCtrl.getHabitacionesLibres()); 
+        assertEquals(0, informeCtrl.getHabitacionesOcupadas()); 
     }
     
     
