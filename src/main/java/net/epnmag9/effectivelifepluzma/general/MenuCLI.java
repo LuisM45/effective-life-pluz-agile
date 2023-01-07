@@ -18,7 +18,7 @@ public class MenuCLI implements Serializable {
 
     private static final Scanner scn = new Scanner(System.in);
     private final PacientesIngresadosVw pacientesIngresadosVw = PacientesIngresadosVw.createPacientesIngresados();
-    private final HospitalVw hospitalVw = HospitalVw.createHospital(pacientesIngresadosVw); 
+    private final HospitalVw hospitalVw = HospitalVw.createHospital(pacientesIngresadosVw);
 
     final static String mainMenu
             = """
@@ -41,6 +41,8 @@ public class MenuCLI implements Serializable {
               14. Mostrar entradas y salidas del hospital
               15. Mostrar estadisticas del hospital
               16. Generar informe del hospital
+              17. Registrar nuevo doctor
+              18. Mostrar informe de personal
               0. Salir
               Ingrese la acción a realizar: 
               --------------------------------------------------------------------------------""";
@@ -99,6 +101,12 @@ public class MenuCLI implements Serializable {
                     break;
                 case "16":
                     hospitalVw.printInformeHospital();
+                    break;
+                case "17":
+                    hospitalVw.addDoctor();
+                    break;
+                case "18":
+                    hospitalVw.printDoctorInfom();
                     break;
                 default: {
                     ;

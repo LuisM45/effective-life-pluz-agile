@@ -5,6 +5,7 @@
 package net.epnmag9.effectivelifepluzma.models;
 
 import java.io.Serializable;
+import net.epnmag9.effectivelifepluzma.controllers.DoctorCtrl;
 
 /**
  *
@@ -13,10 +14,12 @@ import java.io.Serializable;
 public class TareaMdl implements Serializable{
     private String descripcion;
     private String estado;
+    private DoctorCtrl doctor;
 
-    public TareaMdl(String descripcion, String estado) {
+    public TareaMdl(String descripcion, String estado, DoctorCtrl doctor) {
         this.descripcion = descripcion;
         this.estado = estado;
+        this.doctor = doctor;
     }
 
     public String getDescripcion() {

@@ -88,6 +88,12 @@ public class HospitalCtrl implements Serializable{
         return null;
     }
     
+    public void addDoctor(DoctorCtrl doctorCtrl){
+        model.getDoctores().add(doctorCtrl);
+    }
     
-    
+     public List<DoctorCtrl> getDoctores() {
+        return model.getDoctores();
+    }
+     
 }

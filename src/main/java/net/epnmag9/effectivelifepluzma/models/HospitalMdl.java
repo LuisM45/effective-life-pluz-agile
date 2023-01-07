@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import net.epnmag9.effectivelifepluzma.controllers.DoctorCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.HabitacionCtrl;
 import net.epnmag9.effectivelifepluzma.controllers.VisitaCtrl;
 
@@ -20,11 +21,13 @@ public class HospitalMdl implements Serializable{
     private List<HabitacionCtrl> habitaciones;
     private List<VisitaCtrl> visitas;
     private List<VisitaCtrl> visitasAnteriores;
+    private List<DoctorCtrl> doctores;
 
     public HospitalMdl() {
         habitaciones = new ArrayList<>();
         visitas = new LinkedList<>();
         visitasAnteriores = new LinkedList<>();
+        doctores = new LinkedList<>();
     }
 
     public List<HabitacionCtrl> getHabitaciones() {
@@ -38,9 +41,9 @@ public class HospitalMdl implements Serializable{
     public List<VisitaCtrl> getVisitasAnteriores() {
         return visitasAnteriores;
     }
-    
-    
-    
-    
+
+    public List<DoctorCtrl> getDoctores() {
+        return doctores;
+    }   
     
 }

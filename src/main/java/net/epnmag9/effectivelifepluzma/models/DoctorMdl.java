@@ -7,6 +7,7 @@ package net.epnmag9.effectivelifepluzma.models;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import net.epnmag9.effectivelifepluzma.controllers.TareaCtrl;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.List;
 public class DoctorMdl implements Serializable{
     private String nombre;
     private String CI;
-    private List<TareaMdl> tareas;
+    private List<TareaCtrl> tareas;
 
     public DoctorMdl(String nombre, String CI) {
         this.nombre = nombre;
@@ -39,11 +40,11 @@ public class DoctorMdl implements Serializable{
         this.CI = CI;
     }
 
-    public List<TareaMdl> getTareas() {
+    public List<TareaCtrl> getTareas() {
         return tareas;
     }
 
-    public void setTareas(List<TareaMdl> tareas) {
+    public void setTareas(List<TareaCtrl> tareas) {
         this.tareas = tareas;
     }
     
